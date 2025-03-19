@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Service";
 import Contact from "./pages/Contect";
  import NotFound from "./pages/NotFound";
- import PagesLayout from "./pages/Pages/pageslayout";
+ import PagesLayout from "./pages/Pages/pagesLayout";
  import Team from "./pages/Pages/Team";
  import BusinessPlan from "./pages/Pages/BusinessPlan";
  import Legal from "./pages/Pages/Legal";
