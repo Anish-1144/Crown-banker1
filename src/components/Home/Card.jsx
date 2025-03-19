@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function SolarEnergycards() {
   return (
-    <div className="w-full bg-transparent mb-2 py-8 px-6 ">
+    <div className="w-full  bg-transparent mb-2 px-4 md:px-24 py-4 md:py-12 ">
       <div className="container mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Green panel */}

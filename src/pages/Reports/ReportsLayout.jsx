@@ -6,8 +6,9 @@ export default function ReportsLayout() {
   return (
     <div>
       <Nevbar />
+        <Outlet />
       <Footer />
-      <Outlet />
+    
     </div>
   );
 }

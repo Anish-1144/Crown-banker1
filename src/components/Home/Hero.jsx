@@ -18,7 +18,7 @@ export default function Hero() {
       title: "We Invest In The Future Of Planet!",
       description:
         "As a world wide distributor of solar supplies we endeavor to provide fast and knowledgeable service, we can get you materials by sea or air.",
-      image: "https://picsum.photos/1920/700",
+      image: "src/assets/images/backgrounds/3.jpg",
     },
     {
       id: 2,
@@ -96,7 +96,7 @@ export default function Hero() {
 
   return (
     <div
-      className="relative  i w-full h-[600px] md:h-[700px] overflow-hidden"
+      className="relative w-full h-[600px] md:h-[700px] overflow-hidden"
       onMouseEnter={pauseAutoPlay}
       onMouseLeave={resumeAutoPlay}
     >
@@ -117,7 +117,7 @@ export default function Hero() {
         </div>
       ))}
 
-      <div className="relative z-20 h-full flex flex-col justify-center px-6 md:px-16 lg:px-24 max-w-7xl mx-auto">
+      <div className="relative z-20 h-full flex flex-col justify-center px-6  max-w-7xl mx-6 md:mx-24">
         {slides.map((slide, index) => (
           <div
             key={slide.id}

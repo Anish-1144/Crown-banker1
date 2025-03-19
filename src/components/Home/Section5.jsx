@@ -10,10 +10,11 @@ const QuoteRequestSection = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col md:flex-row items-stretch min-h-[400px] sm:min-h-[500px] md:min-h-[600px] py-6 sm:py-12 px-4 sm:px-8 md:px-12 lg:px-24">
+    <section className="relative flex flex-col md:flex-row items-stretch min-h-[400px] sm:min-h-[500px] md:min-h-[600px] py-6 sm:py-12 mx-4 sm: md:mx-24    "> 
+    
       {/* Left Side - Blurred Background with Text */}
       <div
-        className="w-full md:w-1/2 h-[150px] sm:h-[200px] md:h-auto bg-cover bg-center flex items-center justify-center"
+        className="w-full md:w-1/2 h-[150px] sm:h-[200px] md:h-auto bg-cover bg-center flex items-center justify-center shadow-xl rounded-xl "
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="bg-black bg-opacity-50 p-4 sm:p-6 rounded-lg">
@@ -24,7 +25,7 @@ const QuoteRequestSection = () => {
       </div>
 
       {/* Right Side - Form */}
-      <div className="w-full md:w-1/2 bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-center">
+      <div className="w-full md:w-1/2 bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-center shadow-xl rounded-xl">
         <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">
           Request A Quote
         </h3>

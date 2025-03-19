@@ -9,7 +9,7 @@ import Contact from "./pages/Contect";
  import Legal from "./pages/Pages/Legal";
  import ReportsLayout from "./pages/Reports/ReportsLayout";
  import TradeReport from "./pages/Reports/TradeReport";
- import SolarPurchaseDoc from "./pages/Reports/SolarPurchaseDoc";
+ import SolarAgreement from "./pages/Reports/SolarPurchaseDoc";
  import TradeView from "./pages/Reports/TradeView";
 
 export default function App() {
@@ -32,10 +32,7 @@ export default function App() {
         {/* Reports Nested Routes */}
         <Route path="/reports" element={<ReportsLayout />}>
           <Route path="trade-report" element={<TradeReport />} />
-          <Route
-            path="solar-purchase-document"
-            element={<SolarPurchaseDoc />}
-          />
+          <Route path="solar-purchase-document" element={<SolarAgreement />} />
           <Route path="trade-view" element={<TradeView />} />
         </Route>
 

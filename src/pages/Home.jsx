@@ -6,7 +6,7 @@ import SolarEnergycards from '../components/Home/Card'
 import BannerLayout5 from '../components/Home/Section'
 import BankingInvestmentSection from '../components/Home/section2'
 import BankingHeroSection from '../components/Home/section3'
-import BankingInfoSection from '../components/Home/section4'
+import CryptoCard from "../components/Home/section4";
 import QuoteRequestSection from '../components/Home/section5'
 
 function Home() {
@@ -18,8 +18,8 @@ function Home() {
       <BannerLayout5 />
       <BankingInvestmentSection />
       <BankingHeroSection />
-      <BankingInfoSection />
-      <QuoteRequestSection/>
+      <CryptoCard />
+      <QuoteRequestSection />
       <Footer />
     </div>
   );

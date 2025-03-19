@@ -12,15 +12,7 @@ const BankingHeroSection = () => {
       {/* Right Side - Green Section */}
       <div className="w-full md:w-1/2 bg-green-600 text-white p-6 sm:p-8 md:p-12 flex flex-col justify-center">
         {/* Header */}
-        <p className="text-sm flex items-center gap-2">
-          <span className="inline-block bg-white text-blue-600 px-2 py-1 rounded-sm text-xs">
-            🔍
-          </span>
-          <span>Explore More,</span>
-          <a href="#" className="font-bold underline">
-            Find Your Solution →
-          </a>
-        </p>
+       
 
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-3 leading-tight">
           Take Charge Of Your Financial Future With <br /> Smart & Secure
@@ -62,7 +54,7 @@ const BankingHeroSection = () => {
         </div>
 
         {/* Button */}
-        <button className="mt-6 flex items-center gap-2 bg-white text-green-600 px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold">
+        <button className="mt-6 w-56 flex items-center gap-2 bg-white text-green-600 px-4 py-2 sm:px-6 sm:py-3 rounded-md font-semibold">
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           Request A Quote
         </button>

@@ -6,8 +6,8 @@ export default function PagesLayout() {
   return (
     <div>
       <Nevbar />
-      <Footer />
       <Outlet />
+      <Footer />
     </div>
   );
 }

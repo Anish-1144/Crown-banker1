@@ -27,7 +27,7 @@ const toggleDropdown = (menu) => {
   return (
     <header className="w-full ">
       {/* Top bar with contact info */}
-      <div className="hidden md:flex items-center justify-between bg-white py-2 px-4 lg:px-8 border-b">
+      <div className="hidden md:flex items-center justify-between bg-white py-2  md:px-24 border-b">
         <div className="flex items-center space-x-6 text-sm text-gray-600">
           <div className="flex items-center gap-2">
             <Mail className="h-4 w-4" />
@@ -82,7 +82,7 @@ const toggleDropdown = (menu) => {
       </div>
 
       {/* Main navigation */}
-      <div className="bg-white py-4 px-4 lg:px-8 flex items-center justify-between">
+      <div className="bg-white py-4 px-4 md:px-24 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <div className="relative h-14 w-48">

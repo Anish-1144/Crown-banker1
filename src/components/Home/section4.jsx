@@ -1,46 +1,107 @@
-import { useState, useEffect } from "react";
+import React from "react";
 
-const BankingInfoSection = () => {
-  const [backgroundImage, setBackgroundImage] = useState("");
-
-  // Generate a random image from picsum.photos on mount
-  useEffect(() => {
-    const randomId = Math.floor(Math.random() * 1000); // Random ID for unique image
-    setBackgroundImage(`https://picsum.photos/1920/1080?random=${randomId}`);
-  }, []);
-
+const CryptoCard = () => {
   return (
-    <section
-      className="relative w-full h-[500px] md:h-[600px] flex items-center justify-start bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      {/* Blurred Background Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md"></div>
+    <section className="bg-green text-black py-12 sm:py-16 lg:py-20">
+      <div className="max-w-7xl mx-24 ">
+        {/* Header Section */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
+          <div className="lg:w-2/3 mb-8 lg:mb-0">
+            <h2 className="text-blue-400 text-sm sm:text-base font-semibold uppercase mb-2">
+              Crypto Card
+            </h2>
+            <h1 className="text-4xl sm:text-2xl text-green-500 lg:text-5xl font-bold mb-4">
+              Crown Bankers Crypto Card
+            </h1>
+            <p className="text-gray-800 text-base sm:text-lg lg:text-xl leading-relaxed">
+              Unlock the power of your crypto assets with Crown Bankers Crypto
+              Card. Choose our Virtual Card for seamless online purchases or the
+              Physical Card for $100 spending. Activate a card for the ultimate
+              crypto experience, anytime, anywhere.
+            </p>
+          </div>
+          <div className="lg:w-1/3">
+            <img
+              src="src/assets/images/crypto-card-header.jpg" // Replace with actual image path
+              alt="Crown Bankers Crypto Card"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
 
-      {/* Content Card */}
-      <div className="relative z-10 max-w-md p-6 bg-white rounded-lg shadow-lg mx-6 md:mx-12">
-        <p className="text-sm text-green-600 font-semibold mb-2">
-          How It Works, Step One
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          We Plan & Deliver, <br /> Effortlessly.
-        </h2>
-        <p className="text-gray-700 text-base mb-6">
-          At Crown Bankers, we collaborate with you to design and implement
-          financial solutions that align perfectly with your goals. With access
-          to top-tier banking products from trusted institutions, we ensure you
-          get the best options without compromise. No stress. No hidden costs.
-          Seamless banking, tailored for you.
-        </p>
-        <button className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded">
-          <span className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-            <span className="text-black font-bold">→</span>
-          </span>
-          Learn More
-        </button>
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {/* Card 1: Seamless Online Shopping */}
+          <div className="bg-white  p-6 sm:p-8 flex flex-col items-center text-center  border-green-500 border-4 shadow-xl rounded-xl">
+            <img
+              src="src/assets/images/online-shopping.jpg" // Replace with actual image path
+              alt="Seamless Online Shopping"
+              className="w-full h-40 object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              Seamless Online Shopping
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base">
+              Instantly create and use your Crown Bankers Virtual Card to access
+              hassle-free online purchases. Perfect for everyday use and instant
+              crypto-to-fiat purchases.
+            </p>
+          </div>
+
+          {/* Card 2: Global Spending Power */}
+          <div className="bg-white  p-6 sm:p-8 flex flex-col items-center text-center  border-green-500 border-4 shadow-xl rounded-xl">
+            <img
+              src="src/assets/images/global-spending.jpg" // Replace with actual image path
+              alt="Global Spending Power"
+              className="w-full h-40 object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              Global Spending Power
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base">
+              Our Physical Card lets you spend effortlessly at over 1 million
+              merchants worldwide, both in online and offline. Activate with a
+              $100/month spending facility.
+            </p>
+          </div>
+
+          {/* Card 3: Easy Activation */}
+          <div className="bg-white  p-6 sm:p-8 flex flex-col items-center text-center  border-green-500 border-4 shadow-xl rounded-xl">
+            <img
+              src="src/assets/images/easy-activation.jpg" // Replace with actual image path
+              alt="Easy Activation"
+              className="w-full h-40 object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              Easy Activation
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base">
+              Get started quickly with our easy activation process. Virtual
+              cards are available for $25/month, while physical cards are
+              available for $100/month.
+            </p>
+          </div>
+
+          {/* Card 4: Enhanced Security */}
+          <div className="bg-white  p-6 sm:p-8 flex flex-col items-center text-center border-green-500 border-4 shadow-xl rounded-xl">
+            <img
+              src="src/assets/images/enhanced-security.jpg" // Replace with actual image path
+              alt="Enhanced Security"
+              className="w-full h-40 object-cover rounded-lg mb-4"
+            />
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              Enhanced Security
+            </h3>
+            <p className="text-gray-400 text-sm sm:text-base">
+              Enjoy peace of mind with advanced security features on both cards,
+              ensuring safe and secure transactions whether you're at home or on
+              the go.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default BankingInfoSection;
+export default CryptoCard;
