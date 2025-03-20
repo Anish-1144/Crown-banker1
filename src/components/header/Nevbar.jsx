@@ -9,7 +9,7 @@ import {
   ShoppingCart,
   ChevronDown,
   Twitter,
-  Instagram,
+  Youtube,
   Facebook,
   Phone,
 } from "lucide-react";
@@ -58,21 +58,21 @@ const toggleDropdown = (menu) => {
           <div className="flex items-center space-x-2">
             <Link
               to="#"
-              className="rounded-full bg-gray-800 p-1.5 flex items-center justify-center"
+              className="rounded-full bg-[#4CAF50] p-1.5 flex items-center justify-center"
             >
               <span className="sr-only">Facebook</span>
               <Facebook className="h-4 w-4 text-white" />
             </Link>
             <Link
               to="#"
-              className="rounded-full bg-gray-800 p-1.5 flex items-center justify-center"
+              className="rounded-full bg-[#4CAF50] p-1.5 flex items-center justify-center"
             >
               <span className="sr-only">Instagram</span>
-              <Instagram className="h-4 w-4 text-white" />
+              <Youtube className="h-4 w-4 text-white" />
             </Link>
             <Link
               to="#"
-              className="rounded-full bg-gray-800 p-1.5 flex items-center justify-center"
+              className="rounded-full bg-[#4CAF50] p-1.5 flex items-center justify-center"
             >
               <span className="sr-only">Twitter</span>
               <Twitter className="h-4 w-4 text-white" />
@@ -82,19 +82,21 @@ const toggleDropdown = (menu) => {
       </div>
 
       {/* Main navigation */}
-      <div className="bg-white py-4 px-4 md:px-24 flex items-center justify-between">
+      <div className="bg-white text-lg px-4 md:px-20 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <div className="relative h-14 w-48">
+            <div className="relative h-18 w-36">
               <div className="flex items-center">
-                <div className="bg-green-500 h-12 w-12 rounded-md flex items-center justify-center mr-3">
-                  logo
+                <div className="bg-white rounded-md flex items-center justify-center  ">
+                  <img
+                    src="/images/logo1.png"
+                    alt="logo1"
+                    height={300}
+                    width={350}
+                  />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-gray-800">
-                    Crown-Banker
-                  </div>
-                  <div className="text-xs text-gray-500">Invest Owen Risk</div>
+                  {/* <div className="text-xs text-gray-500">Invest Owen Risk</div> */}
                 </div>
               </div>
             </div>
@@ -334,7 +336,6 @@ const toggleDropdown = (menu) => {
               )}
             </div>
 
-           
             <Link
               to="/contact"
               className="py-2 text-gray-700 border-b border-gray-100"
@@ -342,7 +343,7 @@ const toggleDropdown = (menu) => {
               Contact Us
             </Link>
 
-            <div className="flex space-x-2 pt-2">
+            <div className="flex space-x-2 pt-2  border-gray-100">
               <Link
                 to="#"
                 className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md flex-1 text-center"

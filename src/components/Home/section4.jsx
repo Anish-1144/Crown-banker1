@@ -3,14 +3,14 @@ import React from "react";
 const CryptoCard = () => {
   return (
     <section className="bg-green text-black py-12 sm:py-16 lg:py-20">
-      <div className="max-w-7xl mx-24 ">
+      <div className="max-w-7xl mx-4 md:mx-24 ">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
           <div className="lg:w-2/3 mb-8 lg:mb-0">
             <h2 className="text-blue-400 text-sm sm:text-base font-semibold uppercase mb-2">
-              Crypto Card
+              Crypto Card 
             </h2>
-            <h1 className="text-4xl sm:text-2xl text-green-500 lg:text-5xl font-bold mb-4">
+            <h1 className="text-4xl sm:text-2xl text-[#4CAF50] lg:text-4xl font-bold mb-4">
               Crown Bankers Crypto Card
             </h1>
             <p className="text-gray-800 text-base sm:text-lg lg:text-xl leading-relaxed">
@@ -20,9 +20,10 @@ const CryptoCard = () => {
               crypto experience, anytime, anywhere.
             </p>
           </div>
-          <div className="lg:w-1/3">
+          <div className="lg:w-1/4">
             <img
-              src="src/assets/images/crypto-card-header.jpg" // Replace with actual image path
+              src="/images/19.png"
+              // Replace with actual image path
               alt="Crown Bankers Crypto Card"
               className="w-full rounded-lg shadow-lg"
             />

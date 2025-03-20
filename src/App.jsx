@@ -11,6 +11,9 @@ import Contact from "./pages/Contect";
  import TradeReport from "./pages/Reports/TradeReport";
  import SolarAgreement from "./pages/Reports/SolarPurchaseDoc";
  import TradeView from "./pages/Reports/TradeView";
+ import Privacy from "./pages/Privacy ";
+ import Term from "./pages/Term"; 
+ import Fqa from "./pages/Fqa";
 
 export default function App() {
   return (
@@ -21,6 +24,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Term />} />
+        <Route path="/faqs" element={<Fqa />} />  
 
         {/* Pages Nested Routes */}
         <Route path="/pages" element={<PagesLayout />}>

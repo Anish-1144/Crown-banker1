@@ -5,7 +5,7 @@ const VideoBanner = () => {
 
   return (
     <section className="relative bg-white py-16">
-      <div className="container md:mx-24 px-6 max-w-fit">
+      <div className="container md:mx-24  max-w-fit">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Left Column - Text Content */}
           <div className="lg:w-1/2">

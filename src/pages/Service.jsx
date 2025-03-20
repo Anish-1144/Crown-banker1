@@ -107,75 +107,80 @@ const Services = () => {
       </section>
 
       {/* Electric Vehicles Section */}
-      <section className="bg-green-950 text-white py-12 sm:py-16 lg:py-20">
+      <section
+        className="py-12 sm:py-16 lg:py-20"
+        style={{ backgroundImage: `url("../images/backgrounds/4.jpg")` }}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-green-100">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-gray-900">
             Charge Up Your Portfolio: The Electrifying EV Revolution
           </h2>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
-            <div className="lg:w-1/2 mb-8 lg:mb-0 order-2 lg:order-1">
-              <img
-                src="src/assets/images/content-image-2.jpg" // Replace with actual image path
-                alt="Electric Vehicles"
-                className="w-full rounded-lg shadow-lg border border-green-500/30"
-              />
-            </div>
-            <div className="lg:w-1/2 order-1 lg:order-2">
-              <h3 className="text-2xl sm:text-3xl font-bold text-green-300 mb-6">
-                Why Electric Vehicles?
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-trending-up text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      Rapid Adoption
-                    </h4>
-                  </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    The global EV market is expected to hit $1.8 trillion by
-                    2030.
-                  </p>
-                </div>
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-cog text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      Clean Future
-                    </h4>
-                  </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    EVs are leading the shift towards sustainable
-                    transportation.
-                  </p>
-                </div>
+          <div className="bg-[#e8f5e9] backdrop-blur-md rounded-lg shadow-2xl p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
+              <div className="lg:w-1/2 mb-8 lg:mb-0 order-2 lg:order-1">
+                <img
+                  src="src/assets/images/content-image-2.jpg" // Replace with actual image path
+                  alt="Electric Vehicles"
+                  className="w-full rounded-lg shadow-lg border border-green-500/30"
+                />
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-green-300 mb-6">
-                Our Approach
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-trending-up text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      Comprehensive Investments
-                    </h4>
+              <div className="lg:w-1/2 order-1 lg:order-2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                  Why Electric Vehicles?
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-trending-up text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        Rapid Adoption
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      The global EV market is expected to hit $1.8 trillion by
+                      2030.
+                    </p>
                   </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    From Tesla and General Motors to innovative battery tech
-                    companies.
-                  </p>
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-cog text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        Clean Future
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      EVs are leading the shift towards sustainable
+                      transportation.
+                    </p>
+                  </div>
                 </div>
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-cog text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      Infrastructure Focus
-                    </h4>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                  Our Approach
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-trending-up text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        Comprehensive Investments
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      From Tesla and General Motors to innovative battery tech
+                      companies.
+                    </p>
                   </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    Investing in charging solutions and ecosystem providers.
-                  </p>
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-cog text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        Infrastructure Focus
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      Investing in charging solutions and ecosystem providers.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -274,97 +279,102 @@ const Services = () => {
       </section>
 
       {/* Cryptocurrency Section */}
-      <section className="bg-green-950 text-white py-12 sm:py-16 lg:py-20">
+      <section
+        className="py-12 sm:py-16 lg:py-20"
+        style={{ backgroundImage: `url("../images/backgrounds/4.jpg")` }}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-green-100">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-gray-900">
             Embracing Crypto: Crown Bankers' Strategic Approach
           </h2>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
-            <div className="lg:w-1/2 mb-8 lg:mb-0 order-2 lg:order-1">
-              <img
-                src="src/assets/images/content-image-2.jpg" // Replace with actual image path
-                alt="Cryptocurrency"
-                className="w-full rounded-lg shadow-lg border border-green-500/30"
-              />
-            </div>
-            <div className="lg:w-1/2 order-1 lg:order-2">
-              <p className="text-green-200 text-base sm:text-lg mb-8">
-                At Crown Bankers, we integrate cryptocurrency investments
-                alongside traditional ones. With meticulous research, we
-                identify promising crypto assets to diversify portfolios and
-                achieve high returns. From Bitcoin to DeFi projects, we navigate
-                this frontier, aiming to harness blockchain's disruptive
-                potential while offering innovative investment opportunities.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-trending-up text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      Comprehensive Research
-                    </h4>
-                  </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    We conduct thorough research to identify promising crypto
-                    assets, ensuring informed investment decisions.
-                  </p>
-                </div>
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-cog text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      Diversification
-                    </h4>
-                  </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    Crypto investments are integrated with traditional
-                    portfolios to mitigate risk and maximize returns.
-                  </p>
-                </div>
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-trending-up text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      Innovation and Disruption
-                    </h4>
-                  </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    Investing in blockchain technology and DeFi projects to
-                    capitalize on their transformative potential.
-                  </p>
-                </div>
-                <div className="bg-green-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    <i className="fas fa-cog text-2xl text-green-400 mr-3"></i>
-                    <h4 className="text-lg font-semibold text-green-200">
-                      High Returns
-                    </h4>
-                  </div>
-                  <p className="text-green-400 text-sm sm:text-base">
-                    Aim to achieve high returns through strategic allocation and
-                    proactive management in the crypto space.
-                  </p>
-                </div>
+          <div className="bg-[#e8f5e9] backdrop-blur-md rounded-lg shadow-2xl p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
+              <div className="lg:w-1/2 mb-8 lg:mb-0 order-2 lg:order-1">
+                <img
+                  src="src/assets/images/content-image-2.jpg" // Replace with actual image path
+                  alt="Cryptocurrency"
+                  className="w-full rounded-lg shadow-lg border border-green-500/30"
+                />
               </div>
-              <div className="text-center mt-8">
-                <h3 className="text-2xl sm:text-3xl font-bold text-green-300 mb-4">
-                  Explore Crypto Opportunities with Crown Bankers!
-                </h3>
-                <p className="text-green-200 text-base sm:text-lg mb-6">
-                  Join us to leverage the potential of cryptocurrency
-                  investments in your portfolio.
+              <div className="lg:w-1/2 order-1 lg:order-2">
+                <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8">
+                  At Crown Bankers, we integrate cryptocurrency investments
+                  alongside traditional ones. With meticulous research, we
+                  identify promising crypto assets to diversify portfolios and
+                  achieve high returns. From Bitcoin to DeFi projects, we
+                  navigate this frontier, aiming to harness blockchain's
+                  disruptive potential while offering innovative investment
+                  opportunities.
                 </p>
-                <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all font-semibold shadow-md hover:shadow-lg">
-                  Get Started
-                </button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-trending-up text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        Comprehensive Research
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      We conduct thorough research to identify promising crypto
+                      assets, ensuring informed investment decisions.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-cog text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        Diversification
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      Crypto investments are integrated with traditional
+                      portfolios to mitigate risk and maximize returns.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-trending-up text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        Innovation and Disruption
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      Investing in blockchain technology and DeFi projects to
+                      capitalize on their transformative potential.
+                    </p>
+                  </div>
+                  <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                    <div className="flex items-center mb-4">
+                      <i className="fas fa-cog text-2xl text-green-600 mr-3"></i>
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        High Returns
+                      </h4>
+                    </div>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      Aim to achieve high returns through strategic allocation
+                      and proactive management in the crypto space.
+                    </p>
+                  </div>
+                </div>
+                <div className="text-center mt-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    Explore Crypto Opportunities with Crown Bankers!
+                  </h3>
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+                    Join us to leverage the potential of cryptocurrency
+                    investments in your portfolio.
+                  </p>
+                  <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all font-semibold shadow-md hover:shadow-lg">
+                    Get Started
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Extra Income Opportunities Section */}
-     
+      {/* Extra Income Opportunities Section (Commented Out in Original) */}
       <Footer />
     </div>
   );

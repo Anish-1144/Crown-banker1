@@ -43,7 +43,7 @@ export default function Footer() {
                   Home
                 </Link>
               </li>
-            
+
               <li>
                 <Link
                   to="/faqs"
@@ -85,7 +85,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/policy"
+                  to="/privacy"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Policy
@@ -93,7 +93,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/#"
+                  to="/"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Returns

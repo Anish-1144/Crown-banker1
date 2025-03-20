@@ -18,7 +18,7 @@ export default function Hero() {
       title: "We Invest In The Future Of Planet!",
       description:
         "As a world wide distributor of solar supplies we endeavor to provide fast and knowledgeable service, we can get you materials by sea or air.",
-      image: "src/assets/images/backgrounds/3.jpg",
+      image: "/images/wind-turbines-agricultural-field.png",
     },
     {
       id: 2,
@@ -26,7 +26,8 @@ export default function Hero() {
       title: "Energize Society By Reliable Energy!",
       description:
         "As a world wide distributor of solar supplies we endeavor to provide fast and knowledgeable service, we can get you materials by sea or air.",
-      image: "https://picsum.photos/1920/701",
+      image:
+        "https://media.gettyimages.com/id/1032683612/photo/solar-energy-and-wind-power-stations.jpg?s=612x612&w=0&k=20&c=KXElDTxrRrXG72sVD4QGnctJU1iSMroKPOl6XUfGHNk=",
     },
   ];
 
@@ -117,7 +118,7 @@ export default function Hero() {
         </div>
       ))}
 
-      <div className="relative z-20 h-full flex flex-col justify-center px-6  max-w-7xl mx-6 md:mx-24">
+      <div className="relative z-20 h-full flex flex-col justify-center  px-6 max-w-7xl mx-6 md:mx-24">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -141,19 +142,13 @@ export default function Hero() {
                 {slide.description}
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Link
+                {/* <Link
                   href="#"
                   className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
                 >
-                  <span>More About Us</span>
+                  {/* <span>More About Us</span> 
                   <ArrowRight size={18} />
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-2 bg-white hover:bg-gray-100 text-green-600 px-6 py-3 rounded-md transition-colors"
-                >
-                  <span>More About Us!</span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -162,18 +157,18 @@ export default function Hero() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
+        className=" hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
         aria-label="Previous slide"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={30} />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
+        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
         aria-label="Next slide"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={30} />
       </button>
 
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-2">
