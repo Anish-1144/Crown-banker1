@@ -25,7 +25,7 @@ const QuoteRequestSection = () => {
 
         {/* Right Side - Form */}
         <div className="w-full md:w-1/2 bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-center shadow-xl rounded-xl">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl text-[#4CAF50] md:text-5xl font-bold mb-4 sm:mb-6">
             Calculate Your Earnings
           </h3>
           <form className="space-y-3 sm:space-y-4">

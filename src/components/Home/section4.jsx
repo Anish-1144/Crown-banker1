@@ -10,7 +10,7 @@ const CryptoCard = () => {
             {/* <h2 className="text-blue-400 text-sm sm:text-base font-semibold uppercase mb-2">
               Crypto Card
             </h2> */}
-            <h1 className="text-4xl sm:text-2xl text-[#4CAF50] lg:text-4xl font-bold mb-4">
+            <h1 className="text-xl sm:text-2xl text-[#4CAF50] lg:text-5xl font-bold mb-4">
               Investment Packages and Return
             </h1>
             <p className="text-gray-800 text-base sm:text-lg lg:text-xl leading-relaxed">

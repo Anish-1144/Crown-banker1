@@ -13,7 +13,7 @@ const BankingHeroSection = () => {
       <div className="w-full md:w-1/2 bg-[#4CAF50] text-white p-6 sm:p-8 md:p-12 flex flex-col justify-center">
         {/* Header */}
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-3 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mt-3 leading-tight">
           Take Charge Of Your Financial Future With <br /> Smart & Secure
           Banking!
         </h2>

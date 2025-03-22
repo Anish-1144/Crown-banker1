@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -15,15 +15,15 @@ import {
 } from "lucide-react";
 
 function Nevbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState(null);
-const toggleDropdown = (menu) => {
-  if (activeDropdown === menu) {
-    setActiveDropdown(null);
-  } else {
-    setActiveDropdown(menu);
-  }
-};
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const toggleDropdown = (menu) => {
+    if (activeDropdown === menu) {
+      setActiveDropdown(null);
+    } else {
+      setActiveDropdown(menu);
+    }
+  };
   return (
     <header className="w-full ">
       {/* Top bar with contact info */}
@@ -139,18 +139,21 @@ const toggleDropdown = (menu) => {
                     <Link
                       to="/pages/team"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-500"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       Team
                     </Link>
                     <Link
                       to="/pages/business-plan"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-500"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       Business Plan
                     </Link>
                     <Link
                       to="/pages/legal"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-500"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       legal
                     </Link>
@@ -174,18 +177,21 @@ const toggleDropdown = (menu) => {
                     <Link
                       to="/reports/trade-report"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-500"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       Trade Report
                     </Link>
                     <Link
                       to="/reports/trade-view"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-500"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       Trade View
                     </Link>
                     <Link
                       to="/reports/solar-purchase-document"
                       className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-500"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       Solar Purchase Document
                     </Link>
@@ -281,18 +287,21 @@ const toggleDropdown = (menu) => {
                   <Link
                     to="/pages/team"
                     className="block py-1 text-gray-600 hover:text-green-500"
+                    onClick={() => setActiveDropdown(null)}
                   >
                     Team
                   </Link>
                   <Link
                     to="/pages/business-plan"
                     className="block py-1 text-gray-600 hover:text-green-500"
+                    onClick={() => setActiveDropdown(null)}
                   >
                     Business Plan
                   </Link>
                   <Link
                     to="/pages/legal"
                     className="block py-1 text-gray-600 hover:text-green-500"
+                    onClick={() => setActiveDropdown(null)}
                   >
                     Legal
                   </Link>
@@ -317,18 +326,21 @@ const toggleDropdown = (menu) => {
                   <Link
                     to="/reports/trade-report"
                     className="block py-1 text-gray-600 hover:text-green-500"
+                    onClick={() => setActiveDropdown(null)}
                   >
                     Trade Report
                   </Link>
                   <Link
                     to="/reports/trade-view"
                     className="block py-1 text-gray-600 hover:text-green-500"
+                    onClick={() => setActiveDropdown(null)}
                   >
                     Trade View
                   </Link>
                   <Link
                     to="/reports/solar-purchase-document"
                     className="block py-1 text-gray-600 hover:text-green-500"
+                    onClick={() => setActiveDropdown(null)}
                   >
                     Solar Purchase Document
                   </Link>
@@ -364,4 +376,4 @@ const toggleDropdown = (menu) => {
   );
 }
 
-export default Nevbar
+export default Nevbar;

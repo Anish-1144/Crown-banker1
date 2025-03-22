@@ -70,7 +70,6 @@ export default function App() {
         }
       />
 
-      
       <Route
         path="/pages"
         element={

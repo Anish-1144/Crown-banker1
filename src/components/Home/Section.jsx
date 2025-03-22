@@ -9,7 +9,7 @@ const VideoBanner = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Left Column - Text Content */}
           <div className="lg:w-1/2">
-            <h2 className="text-4xl font-bold text-[#4CAF50] leading-tight mb-6">
+            <h2 className="text-4xl font-bold text-[#4CAF50] leading-tight mb-6 ml-4 md:ml-0">
               "Our Goal Is To Change
               <br />
                The Modern World

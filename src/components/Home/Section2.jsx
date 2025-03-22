@@ -31,7 +31,7 @@ const services = [
 const BankingInvestmentSection = () => {
   return (
     <div className="bg-white py-12 px-6 md:px-24">
-      <h3 className="text-[#4CAF50] text-4xl font-bold">
+      <h3 className="text-[#4CAF50] text-5xl font-bold">
         Fostering The Growth Of Financial Innovation
       </h3>
       <h2 className="text-3xl md:text-3xl font-semibold text-gray-900 mt-2">
