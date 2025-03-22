@@ -1,5 +1,5 @@
 import { Outlet} from "react-router-dom";
-import Footer from "../../components/footer/footer";
+import Footer from "../../components/footer/Footer";
 import Nevbar from "../../components/header/Nevbar";
 
 export default function PagesLayout() {
