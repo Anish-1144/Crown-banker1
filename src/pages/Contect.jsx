@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../components/footer/Footer'
 import Nevbar from '../components/header/Nevbar'
-import Contact from '../components/Contact/Contact'
+import Contact from '../components/contact/Contact'
 
 function Contect() {
   return (
