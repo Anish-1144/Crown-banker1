@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 // imporfrom "./component; // Correct import
 import Home from "./pages/Home";
 import Services from "./pages/Service";
-import Contact from "./pages/Contect"; // Fixed typo from Contect
+import Contect from "./pages/Contect"; // Fixed typo from Contect
 import NotFound from "./pages/NotFound";
 import PagesLayout from "./pages/Pages/PagesLayout";
 import Team from "./pages/Pages/Team";
@@ -41,7 +41,7 @@ export default function App() {
         path="/contact"
         element={
           <Smoothscrolls>
-            <Contact />
+            <Contect />
           </Smoothscrolls>
         }
       />
