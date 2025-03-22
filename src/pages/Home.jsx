@@ -8,7 +8,7 @@ import SolarEnergycards from "../components/Home/Card";
 import BannerLayout5 from "../components/Home/Section";
 import BankingInvestmentSection from "../components/Home/Section2";
 import BankingHeroSection from "../components/Home/Section3";
-import CryptoCard from "../components/Home/Section4.jsx";
+import CryptoCard from "../components/Home/Section4";
 import QuoteRequestSection from "../components/Home/Section5";
 
 // Register ScrollTrigger
