@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Footer from "../../components/footer/footer";
+import Footer from "../../components/footer/Footer";
 import Nevbar from "../../components/header/Nevbar";
 // import Contact from "../../components/contact/Contact"
 import { gsap } from "gsap";
