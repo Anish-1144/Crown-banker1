@@ -3,28 +3,10 @@ import { ArrowRight } from "lucide-react";
 export default function Contact() {
   return (
     <div style={{ backgroundImage: `url('/images/backgrounds/4.jpg')` }}>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Rubik:400,500,600,700%7cRoboto:400,500,700&display=swap"
-      />
+    
       <div className="container mx-auto px-4 py-12 md:px-24">
         {/* Map Section */}
-        <div className="mb-12">
-          <div className="bg-white border-2 border-gray-200 rounded-lg p-4 shadow-md">
-            <h2 className="text-3xl font-semibold text-gray-800 mb-4 font-['Rubik']">
-              Our Location
-            </h2>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9050!2d-0.127758!3d51.507351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzI2LjUiTiAwwrAwNyczMi43Ilc!5e0!3m2!1sen!2suk!4v1615321234567!5m2!1sen!2suk"
-              width="100%"
-              height="500"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              title="Our Location"
-            ></iframe>
-          </div>
-        </div>
+      
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Column - Contact Information */}

@@ -21,18 +21,12 @@ const QuoteRequestSection = () => {
           style={{
             backgroundImage: `url(https://www.nexteraenergyresources.com/content/dam/neer/us/en/images/white-pine-solar.jpg)`,
           }}
-        >
-          <div className="bg-black bg-opacity-50 p-4 sm:p-6 rounded-lg">
-            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-center">
-              Calculate Your Earnings
-            </h2>
-          </div>
-        </div>
+        ></div>
 
         {/* Right Side - Form */}
         <div className="w-full md:w-1/2 bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-center shadow-xl rounded-xl">
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">
-            Request A Quote
+            Calculate Your Earnings
           </h3>
           <form className="space-y-3 sm:space-y-4">
             {/* Name and Email */}

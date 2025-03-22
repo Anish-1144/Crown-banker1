@@ -2,10 +2,10 @@ import { ArrowRight } from "lucide-react";
 
 export default function SolarEnergycards() {
   return (
-    <div className="w-full  bg-transparent mb-2 px-4 md:px-24 py-4 md:py-12 ">
+    <div className="w-full bg-transparent mb-2 px-4 md:px-24 py-4 md:py-12 ">
       <div className="container mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {/* Green panel */}
+          {/* Green panel - unchanged */}
           <div className="bg-[#4CAF50] rounded-lg p-8 relative overflow-hidden">
             <div className="relative z-10">
               <h2 className="text-white text-3xl font-bold mb-6">
@@ -40,13 +40,13 @@ export default function SolarEnergycards() {
             </div>
           </div>
 
-          {/* White panels */}
-          <div className="bg-white rounded-xl p-8 flex flex-col justify-between border-4 border-[#4CAF50]">
+          {/* White panels with green hover effect */}
+          <div className="bg-white rounded-xl p-8 flex flex-col justify-between border-4 border-[#4CAF50] hover:bg-[#4CAF50] group">
             <div>
-              <h3 className="text-[#333] text-xl font-semibold mb-4">
+              <h3 className="text-black text-xl font-semibold mb-4 group-hover:text-white">
                 Strategic Innovation
               </h3>
-              <p className="text-gray-500">
+              <p className="text-gray-500 group-hover:text-white">
                 Our state-of-the-art facilities adhere to the highest security
                 and quality standards, ensuring certified and efficient solar
                 energy production.
@@ -59,12 +59,12 @@ export default function SolarEnergycards() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 flex flex-col justify-between border-4 border-[#4CAF50]">
+          <div className="bg-white rounded-xl p-8 flex flex-col justify-between border-4 border-[#4CAF50] hover:bg-[#4CAF50] group">
             <div>
-              <h3 className="text-[#333] text-xl font-semibold mb-4">
+              <h3 className="text-[#333] text-xl font-semibold mb-4 group-hover:text-white">
                 Recognized Excellence
               </h3>
-              <p className="text-gray-500">
+              <p className="text-gray-500 group-hover:text-white">
                 We take pride in our award-winning approach to renewable
                 energy—navigating complex global supply chains while overcoming
                 challenges to deliver unparalleled solutions.
@@ -77,12 +77,12 @@ export default function SolarEnergycards() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl p-8 flex flex-col justify-between border-4 border-[#4CAF50]">
+          <div className="bg-white rounded-xl p-8 flex flex-col justify-between border-4 border-[#4CAF50] hover:bg-[#4CAF50] group">
             <div>
-              <h3 className="text-[#333] text-xl font-semibold mb-4">
+              <h3 className="text-[#333] text-xl font-semibold mb-4 group-hover:text-white">
                 Precision & Reliability
               </h3>
-              <p className="text-gray-500">
+              <p className="text-gray-500 group-hover:text-white">
                 Leveraging cutting-edge technology and decades of expertise, we
                 ensure highly accurate solar energy solutions through advanced
                 testing and rigorous quality control.

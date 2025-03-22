@@ -31,7 +31,7 @@ const services = [
 const BankingInvestmentSection = () => {
   return (
     <div className="bg-white py-12 px-6 md:px-24">
-      <h3 className="text-[#4CAF50]  text-4xl font-bold">
+      <h3 className="text-[#4CAF50] text-4xl font-bold">
         Fostering The Growth Of Financial Innovation
       </h3>
       <h2 className="text-3xl md:text-3xl font-semibold text-gray-900 mt-2">
@@ -44,7 +44,8 @@ const BankingInvestmentSection = () => {
       </p>
 
       <div className="mt-6 flex gap-4 place-items-end">
-        <button className="px-6 py-3 border border-black text-black rounded-md flex items-center gap-2">
+        <button className="px-6 py-3 border border- text-black rounded-md flex items-center gap-2 relative overflow-hidden group">
+          <span className="absolute inset-0 border border-black rounded-md "></span>
           Get Started <ArrowRight />
         </button>
         {/* <button className="px-6 py-3 bg-black text-white rounded-md flex items-center gap-2">
@@ -56,16 +57,20 @@ const BankingInvestmentSection = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg p-6 rounded-lg text-center border border-gray-200"
+            className="bg-white shadow-lg p-6 rounded-lg text-center border-4 border-[#4CAF50] hover:bg-[#4CAF50] group"
           >
-            <div className="text-green-500 text-4xl mb-3">{service.icon}</div>
-            <h4 className="font-semibold text-lg text-gray-900">
+            <div className="text-green-500 text-4xl mb-3 group-hover:text-white">
+              {service.icon}
+            </div>
+            <h4 className="font-semibold text-lg text-gray-900 group-hover:text-white">
               {service.title}
             </h4>
-            <p className="text-gray-500 text-sm mt-2">{service.description}</p>
+            <p className="text-gray-500 text-sm mt-2 group-hover:text-white">
+              {service.description}
+            </p>
             <a
               href="#"
-              className="text-green-600 font-semibold flex items-center justify-center mt-4"
+              className="text-green-600 font-semibold flex items-center justify-center mt-4 group-hover:text-white"
             >
               <span>Explore More</span>
               <ArrowRight className="ml-1" />

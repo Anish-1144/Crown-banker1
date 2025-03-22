@@ -1,21 +1,133 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nevbar from "../components/header/Nevbar";
 import Footer from "../components/footer/Footer";
 
+// Register ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
 const Services = () => {
+  const heroRef = useRef(null);
+  const solarRef = useRef(null);
+  const evRef = useRef(null);
+  const forbesRef = useRef(null);
+  // const cryptoRef = useRef(null); // Uncomment if you want to include the crypto section
+
+  useEffect(() => {
+    // Common animation settings for smoothness
+    const defaults = {
+      ease: "power3.out",
+      duration: 1.2,
+    };
+
+    // Hero fade-in on load (no scroll trigger)
+    if (heroRef.current) {
+      gsap.fromTo(
+        heroRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      );
+    }
+
+    // Solar Section staggered fade-in for child elements
+    if (solarRef.current) {
+      gsap.fromTo(
+        solarRef.current.children,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          ...defaults,
+          stagger: 0.25,
+          scrollTrigger: {
+            trigger: solarRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            scrub: 0.5,
+          },
+        }
+      );
+    }
+
+    // Electric Vehicles Section fade-in
+    if (evRef.current) {
+      gsap.fromTo(
+        evRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          ...defaults,
+          scrollTrigger: {
+            trigger: evRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            scrub: 0.5,
+          },
+        }
+      );
+    }
+
+    // Forbes Section staggered fade-in for child elements
+    if (forbesRef.current) {
+      gsap.fromTo(
+        forbesRef.current.children,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          ...defaults,
+          stagger: 0.25,
+          scrollTrigger: {
+            trigger: forbesRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            scrub: 0.5,
+          },
+        }
+      );
+    }
+
+    // Uncomment and add animation for Crypto Section if needed
+    // if (cryptoRef.current) {
+    //   gsap.fromTo(
+    //     cryptoRef.current,
+    //     { opacity: 0, y: 60 },
+    //     {
+    //       opacity: 1,
+    //       y: 0,
+    //       ...defaults,
+    //       scrollTrigger: {
+    //         trigger: cryptoRef.current,
+    //         start: "top 85%",
+    //         end: "bottom 30%",
+    //         scrub: 0.5,
+    //       },
+    //     }
+    //   );
+    // }
+
+    // Cleanup ScrollTriggers on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <div className="bg-gray-50">
       <Nevbar />
+
       {/* Hero Section */}
       <section
+        ref={heroRef}
         className="relative bg-cover bg-center text-white py-16 sm:py-20 lg:py-24"
         style={{
           backgroundImage: `url('https://picsum.photos/1920/701')`, // Replace with actual image path
         }}
       >
-        {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-green-950/70"></div>
-        <div className="relative max-w-6xl  ">
+        <div className="relative max-w-6xl mx-auto">
           <div className="text-left px-24">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-green-100">
               Ride the Wave to Financial Freedom with Crown Bankers
@@ -32,7 +144,7 @@ const Services = () => {
       </section>
 
       {/* Solar Sector Section */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section ref={solarRef} className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-gray-900">
             Why Invest in the Solar Sector with Crown Bankers
@@ -108,6 +220,7 @@ const Services = () => {
 
       {/* Electric Vehicles Section */}
       <section
+        ref={evRef}
         className="py-12 sm:py-16 lg:py-20"
         style={{ backgroundImage: `url("../images/backgrounds/4.jpg")` }}
       >
@@ -189,7 +302,7 @@ const Services = () => {
       </section>
 
       {/* Forbes Top 500 Section */}
-      <section className="py-12 sm:py-16 lg:py-20">
+      <section ref={forbesRef} className="py-12 sm:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-gray-900">
             Invest in the Best with Crown Bankers
@@ -278,8 +391,9 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Cryptocurrency Section */}
-      <section
+      {/* Uncomment and add Crypto Section if needed */}
+      {/* <section
+        ref={cryptoRef}
         className="py-12 sm:py-16 lg:py-20"
         style={{ backgroundImage: `url("../images/backgrounds/4.jpg")` }}
       >
@@ -372,9 +486,8 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Extra Income Opportunities Section (Commented Out in Original) */}
       <Footer />
     </div>
   );
