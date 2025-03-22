@@ -62,7 +62,7 @@ function Home() {
     // BannerLayout5 parallax effect
     if (bannerRef.current) {
       gsap.to(bannerRef.current, {
-        y: "20%", // Slightly more pronounced parallax
+        y: "10%", // Slightly more pronounced parallax
         ease: "none",
         scrollTrigger: {
           trigger: bannerRef.current,
