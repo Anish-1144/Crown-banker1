@@ -13,4 +13,4 @@ function Contect() {
   )
 }
 
-export default Contect
+export default Contect;
