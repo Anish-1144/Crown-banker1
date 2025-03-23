@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CryptoCard from "../../components/Home/Section4";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -16,6 +17,12 @@ function BusinessPlan() {
   const benefitsItemsRef = useRef(null);
   const portfolioRef = useRef(null);
   const ctaRef = useRef(null);
+  // New refs for additional sections
+  const termsRef = useRef(null);
+  const termsCardsRef = useRef(null);
+  const evRevolutionRef = useRef(null);
+  const incomeStreamRef = useRef(null);
+  const incomeCardsRef = useRef(null);
 
   // Card hover effect state
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -24,7 +31,7 @@ function BusinessPlan() {
     // Common animation settings for smoothness
     const defaults = {
       ease: "power3.out", // Smoother easing
-      duration: 1.2, // Slightly longer duration for fluidity
+      duration: 0.8, // Slightly longer duration for fluidity
     };
 
     // Hero fade-in on load (no scroll trigger for initial load)
@@ -74,13 +81,13 @@ function BusinessPlan() {
     if (investmentCardsRef.current) {
       gsap.fromTo(
         investmentCardsRef.current.children,
-        { opacity: 0, y: 90 },
+        { opacity: 0, y: 10 },
         {
           opacity: 2,
           y: 10,
           duration: 0.5, // Faster duration
           ease: "power2.out", // Quicker easing
-          stagger: 0.02, // Much smaller stagger for faster sequence
+          stagger: 0.01, // Much smaller stagger for faster sequence
           scrollTrigger: {
             trigger: investmentCardsRef.current,
             start: "top 100%", // Trigger earlier when scrolling
@@ -96,7 +103,7 @@ function BusinessPlan() {
     if (benefitsRef.current) {
       gsap.fromTo(
         benefitsRef.current,
-        { opacity: 0, y: 60 },
+        { opacity: 0, y: 0 },
         {
           opacity: 1,
           y: 0,
@@ -105,33 +112,33 @@ function BusinessPlan() {
             trigger: benefitsRef.current,
             start: "top 85%",
             end: "bottom 30%",
-            scrub: 0.5,
+            scrub: 0.1,
             toggleActions: "play none none reverse",
           },
         }
       );
 
-      // Benefits image parallax
-      const benefitsImage =
-        benefitsRef.current.querySelector(".benefits-image");
-      if (benefitsImage) {
-        gsap.fromTo(
-          benefitsImage,
-          { x: -50, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            ...defaults,
-            scrollTrigger: {
-              trigger: benefitsRef.current,
-              start: "top 85%",
-              end: "bottom 30%",
-              scrub: 0.5,
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      }
+      // // Benefits image parallax
+      // const benefitsImage = null
+      //   benefitsRef.current.querySelector(".benefits-image");
+      // if (benefitsImage) {
+      //   gsap.fromTo(
+      //     benefitsImage,
+      //     { x: 60, opacity: 0 },
+      //     {
+      //       x: 0,
+      //       opacity: 1,
+      //       ...defaults,
+      //       scrollTrigger: {
+      //         trigger: benefitsRef.current,
+      //         start: "top 85%",
+      //         end: "bottom 30%",
+      //         scrub: 0.5,
+      //         toggleActions: "play none none reverse",
+      //       },
+      //     }
+      //   );
+      // }
     }
 
     // Benefits items staggered fade-in
@@ -139,7 +146,7 @@ function BusinessPlan() {
       const benefitsItems = benefitsItemsRef.current.children;
       gsap.fromTo(
         benefitsItems,
-        { opacity: 0, x: 60 },
+        { opacity: 0, x: 0 },
         {
           opacity: 1,
           x: 0,
@@ -219,6 +226,157 @@ function BusinessPlan() {
       );
     }
 
+    // Terms section
+    if (termsRef.current) {
+      gsap.fromTo(
+        termsRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          ...defaults,
+          scrollTrigger: {
+            trigger: termsRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            scrub: 0.8,
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Terms cards animation
+      if (termsCardsRef.current) {
+        gsap.fromTo(
+          termsCardsRef.current.children,
+          { opacity: 0, y: 90 },
+          {
+            opacity: 2,
+            y: 10,
+            duration: 0.5,
+            ease: "power2.out",
+            stagger: 0.02,
+            scrollTrigger: {
+              trigger: termsCardsRef.current,
+              start: "top 85%",
+              end: "bottom 30%",
+              scrub: 0.5,
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    }
+
+    // EV Revolution section
+    if (evRevolutionRef.current) {
+      const evElements =
+        evRevolutionRef.current.querySelectorAll(".ev-animate");
+
+      gsap.fromTo(
+        evRevolutionRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          ...defaults,
+          scrollTrigger: {
+            trigger: evRevolutionRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            scrub: 0.8,
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Animate inner content elements
+      gsap.fromTo(
+        evElements,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          ...defaults,
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: evRevolutionRef.current,
+            start: "top 75%",
+            end: "bottom 30%",
+            scrub: 0.5,
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+
+    // Benefits cards animation (enhance existing animation)
+    if (benefitsRef.current) {
+      const benefitsCards =
+        benefitsRef.current.querySelectorAll(".benefit-card");
+
+      gsap.fromTo(
+        benefitsCards,
+        { opacity: 0, y: 90 },
+        {
+          opacity: 2,
+          y: 10,
+          duration: 0.5,
+          ease: "power2.out",
+          stagger: 0.02,
+          scrollTrigger: {
+            trigger: benefitsRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            scrub: 0.5,
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+
+    // Income Stream section
+    if (incomeStreamRef.current) {
+      gsap.fromTo(
+        incomeStreamRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          ...defaults,
+          scrollTrigger: {
+            trigger: incomeStreamRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            scrub: 0.8,
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Income Stream cards
+      if (incomeCardsRef.current) {
+        gsap.fromTo(
+          incomeCardsRef.current.children,
+          { opacity: 0, y: 90 },
+          {
+            opacity: 2,
+            y: 10,
+            duration: 0.5,
+            ease: "power2.out",
+            stagger: 0.02,
+            scrollTrigger: {
+              trigger: incomeCardsRef.current,
+              start: "top 85%",
+              end: "bottom 30%",
+              scrub: 0.5,
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    }
+
     // Cleanup ScrollTriggers on unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -278,7 +436,7 @@ function BusinessPlan() {
       {/* Investment Opportunities Section */}
       <section ref={investmentRef} className="py-20 px-6 md:px-12 bg-gray-50">
         <div className="container mx-auto md:px-24">
-          <h2 className="text-3xl md:text-6xl font-bold text-center mb-16 text-gray-800">
+          <h2 className="text-3xl md:text-6xl font-bold text-center mb-16 text-[#4CAF50]">
             Strategic Investment Opportunities
           </h2>
 
@@ -545,7 +703,7 @@ function BusinessPlan() {
                 <span>Solar Energy</span>
               </div>
 
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight text-[#4CAF50]">
                 Invest in the Future of Solar Energy with Crown bankers
               </h2>
 
@@ -578,7 +736,7 @@ function BusinessPlan() {
                 />
               </div>
 
-              <h3 className="text-4xl font-bold">
+              <h3 className="text-4xl font-bold text-[#4CAF50]">
                 Why Solar? A Brighter Tomorrow Starts Here
               </h3>
 
@@ -602,25 +760,26 @@ function BusinessPlan() {
 
       {/* CTA Section */}
       <section
-        className=" text-white py-20"
+        ref={evRevolutionRef}
+        className="text-white py-20"
         style={{ backgroundImage: `url('/images/backgrounds/4.jpg')` }}
       >
         <div className="container mx-auto px-6 md:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="flex items-center">
-                <span className="text-cyan-400 flex items-center gap-1  bg-white rounded-xl py-1 px-1">
+              <div className="flex items-center ev-animate">
+                <span className="text-cyan-400 flex items-center gap-1 bg-white rounded-xl py-1 px-1">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></div>
                   Electronic vehicles
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-4xl md:text-6xl font-bold leading-tight ev-animate text-white">
                 Charge up your portfolio: How our platform van plug you into the
                 Electrifying EV Revolution
               </h2>
 
-              <div className="relative w-full h-64 mt-6 mb-6">
+              <div className="relative w-full h-64 mt-6 mb-6 ev-animate">
                 <img
                   src="https://crownbankers.com/assets/img/plan/ev.png"
                   alt="Man using EV charging station"
@@ -628,7 +787,7 @@ function BusinessPlan() {
                 />
               </div>
 
-              <p className="text-lg">
+              <p className="text-lg ev-animate">
                 The electric vehicle (EV) revolution is sparking a
                 transformation in transportation, and it's creating a wealth of
                 opportunities for forward-thinking investors. At our Platform,
@@ -638,7 +797,7 @@ function BusinessPlan() {
             </div>
 
             <div className="space-y-6">
-              <div className="relative w-full h-96 rounded-xl overflow-hidden">
+              <div className="relative w-full h-96 rounded-xl overflow-hidden ev-animate">
                 <img
                   src="https://crownbankers.com/assets/img/plan/car.png"
                   alt="Family charging electric vehicle"
@@ -646,11 +805,11 @@ function BusinessPlan() {
                 />
               </div>
 
-              <h3 className="text-3xl font-bold mt-6">
+              <h3 className="text-3xl font-bold mt-6 ev-animate text-white">
                 Why EVs? Buckle Up for a Charged-Up Ride
               </h3>
 
-              <p className="text-lg">
+              <p className="text-lg ev-animate">
                 The world is shifting towards cleaner transportation solutions,
                 and EVs are leading the charge. Government incentives, falling
                 battery costs, and rising consumer demand are all accelerating
@@ -663,9 +822,13 @@ function BusinessPlan() {
           </div>
         </div>
       </section>
+      <CryptoCard />
 
       {/* Income Streams Section */}
-      <section className="bg-white- text-black py-20 px-6 md:px-12 relative overflow-hidden">
+      <section
+        ref={incomeStreamRef}
+        className="bg-white- text-black py-20 px-6 md:px-12 relative overflow-hidden"
+      >
         {/* Background decoration elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-green-400 to-blue-500 blur-3xl"></div>
@@ -685,7 +848,7 @@ function BusinessPlan() {
                   </span>
                 </div>
 
-                <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+                <h2 className="text-4xl md:text-6xl font-bold leading-tight text-[#4CAF50]">
                   Income Stream
                 </h2>
 
@@ -707,7 +870,10 @@ function BusinessPlan() {
             </div>
 
             {/* Right Column - Income Cards */}
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              ref={incomeCardsRef}
+              className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6"
+            >
               {/* Returns on investment */}
               <div className="bg-[#4CAF50] rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-green-900/20 group border border-green-600/30">
                 <div className="flex items-center mb-5">
@@ -912,6 +1078,328 @@ function BusinessPlan() {
           </div>
 
           {/* Add a decorative element for visual interest */}
+        </div>
+      </section>
+
+      {/* Terms Section */}
+      <section
+        ref={termsRef}
+        className="py-20 px-6 md:px-12 bg-white text-black"
+      >
+        <div className="container mx-auto md:px-24">
+          <h2 className="text-3xl md:text-6xl font-bold text-center mb-16 text-[#4CAF50]">
+            Terms
+          </h2>
+
+          <div
+            ref={termsCardsRef}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
+            {/* First row */}
+            <div className="bg-[#4CAF50] rounded-lg p-6 border border-green-600/30 hover:border-green-400/50 transition-all duration-300 text-white">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-700/40 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2">
+                Return on Investment (ROI) credited Mon-Fri.
+              </h3>
+            </div>
+
+            <div className="bg-[#4CAF50] rounded-lg p-6 border border-green-600/30 hover:border-green-400/50 transition-all duration-300 text-white">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-700/40 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2">
+                Referral and binary withdrawals are available 24/7.
+              </h3>
+            </div>
+
+            <div className="bg-[#4CAF50] rounded-lg p-6 border border-green-600/30 hover:border-green-400/50 transition-all duration-300 text-white">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-700/40 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2">
+                Monthly ROI withdrawals are allowed up to 5 times.
+              </h3>
+            </div>
+
+            {/* Second row */}
+            <div className="bg-[#4CAF50] rounded-lg p-6 border border-green-600/30 hover:border-green-400/50 transition-all duration-300 text-white">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-700/40 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2">
+                Once a withdrawal is placed, it will be approved and paid within
+                0 to 8 hours.
+              </h3>
+            </div>
+
+            <div className="bg-[#4CAF50] rounded-lg p-6 border border-green-600/30 hover:border-green-400/50 transition-all duration-300 text-white">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-700/40 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2">
+                Withdrawal charges for ROI income range from 3% to 7%.
+              </h3>
+            </div>
+
+            <div className="bg-[#4CAF50] rounded-lg p-6 border border-green-600/30 hover:border-green-400/50 transition-all duration-300 text-white">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-700/40 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2">
+                Binary capping limit ranges from $1,000 to $7,000.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Benefits Section */}
+      <section
+        ref={benefitsRef}
+        className="py-20 px-6 md:px-12 relative text-white"
+        style={{
+          background: `url('/images/backgrounds/4.jpg') no-repeat center center/cover`,
+        }}
+      >
+        <div className="absolute inset-0 "></div>
+        <div className="container mx-auto md:px-24 relative z-10">
+          <h2 className="text-3xl md:text-6xl font-bold text-center mb-16 text-white">
+            Benefits
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* First row */}
+            <div className="benefit-card bg-white rounded-lg p-6 border border-white/20 hover:border-white/50 transition-all duration-300 shadow-lg text-gray-800">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-100 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2 text-gray-800">
+                24/7 unlimited access to our live support.
+              </h3>
+            </div>
+
+            <div className="benefit-card bg-white rounded-lg p-6 border border-white/20 hover:border-white/50 transition-all duration-300 shadow-lg text-gray-800">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-100 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2 text-gray-800">
+                Zero withdrawal charges for referral and binary incomes.
+              </h3>
+            </div>
+
+            <div className="benefit-card bg-white rounded-lg p-6 border border-white/20 hover:border-white/50 transition-all duration-300 shadow-lg text-gray-800">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-100 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2 text-gray-800">
+                Referral and binary earnings will be credited instantly.
+              </h3>
+            </div>
+
+            {/* Second row */}
+            <div className="benefit-card bg-white rounded-lg p-6 border border-white/20 hover:border-white/50 transition-all duration-300 shadow-lg text-gray-800">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-100 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2 text-gray-800">
+                Referral rewards up to 9%.
+              </h3>
+            </div>
+
+            <div className="benefit-card bg-white rounded-lg p-6 border border-white/20 hover:border-white/50 transition-all duration-300 shadow-lg text-gray-800">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-100 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2 text-gray-800">
+                Binary bonus of 10% on the weaker leg.
+              </h3>
+            </div>
+
+            <div className="benefit-card bg-white rounded-lg p-6 border border-white/20 hover:border-white/50 transition-all duration-300 shadow-lg text-gray-800">
+              <div className="flex justify-center mb-4">
+                <div className="bg-green-100 rounded-full p-4">
+                  <svg
+                    className="h-6 w-6 text-green-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-center text-xl font-semibold mb-2 text-gray-800">
+                Progress through Sunstone to Celestial levels in Crown rewards.
+              </h3>
+            </div>
+          </div>
         </div>
       </section>
     </div>

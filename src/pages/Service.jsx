@@ -145,10 +145,10 @@ const Services = () => {
 
       {/* Solar Sector Section */}
       <section ref={solarRef} className="py-12 sm:py-16 lg:py-20">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-[#4CAF50]">
+         Why Invest in the Best with Crown Bankers
+        </h2>
         <div className="max-w-7xl mx-auto md:mx-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-[#4CAF50]">
-            Why Invest in the Solar Sector with Crown Bankers
-          </h2>
           <div className="flex flex-col lg:flex-row lg:items-left lg:gap-12 ">
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -224,7 +224,7 @@ const Services = () => {
         className="py-12 sm:py-16 lg:py-20"
         style={{ backgroundImage: `url("../images/backgrounds/4.jpg")` }}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 md:mx-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:mx-24">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-white">
             Charge Up Your Portfolio: The Electrifying EV Revolution
           </h2>
@@ -303,7 +303,7 @@ const Services = () => {
 
       {/* Forbes Top 500 Section */}
       <section ref={forbesRef} className="py-12 sm:py-16 lg:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 md:mx-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:mx-24">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-[#4CAF50]">
             Invest in the Best with Crown Bankers
           </h2>

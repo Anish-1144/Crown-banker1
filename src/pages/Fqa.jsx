@@ -55,7 +55,7 @@ function Fqa() {
       <section className="py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
-          <h1 className="text-4xl sm:text-4xl font-extrabold text-center mb-12 text-gray-900">
+          <h1 className="text-4xl sm:text-4xl font-extrabold text-center mb-12 text-white">
             Frequently Asked Questions
           </h1>
 

@@ -7,11 +7,13 @@ import {
   Phone,
   Twitter,
 } from "lucide-react";
+// Import WhatsApp icon from react-icons
+import { FiMessageCircle } from "react-icons/fi";
 
 export default function Footer() {
   return (
     <footer className="bg-black w-full text-white py-12 px-4 relative">
-      <div className="container mx-auto">
+      <div className="container mx-auto md:px-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Quick Contact */}
           <div>
@@ -26,8 +28,8 @@ export default function Footer() {
               <span className="text-lg">+44 7452237405</span>
             </div>
             <div className="flex items-center text-gray-400">
-              <MapPin className="mr-2" size={20} />
-              <span>London, UK</span>
+              {/* <MapPin className="mr-2" size={20} /> */}
+             
             </div>
           </div>
 
@@ -131,23 +133,33 @@ export default function Footer() {
           </div>
           <div className="flex space-x-4">
             <a
-              href="#"
+              href="https://www.facebook.com/crownbankersofficial"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gray-900 p-2 rounded-full hover:bg-gray-800 transition-colors"
+              aria-label="Facebook"
             >
               <Facebook size={20} className="text-green-500" />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/@official-CrownBankers"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gray-900 p-2 rounded-full hover:bg-gray-800 transition-colors"
+              aria-label="YouTube"
             >
               <Youtube size={20} className="text-green-500" />
             </a>
             <a
-              href="#"
+              href="https://chat.whatsapp.com/K0pOZclpfH9DsLxvTyeY5q"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gray-900 p-2 rounded-full hover:bg-gray-800 transition-colors"
+              aria-label="WhatsApp"
             >
-              <Twitter size={20} className="text-green-500" />
+              <FiMessageCircle size={20} className="text-green-500" />
             </a>
+           
           </div>
         </div>
       </div>

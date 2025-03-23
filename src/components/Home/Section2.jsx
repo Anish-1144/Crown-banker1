@@ -1,5 +1,6 @@
 // import { FaArrowRight } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
+import WhiteRoundButton from "../ui/WhiteRoundButton";
 
 const services = [
   {
@@ -44,9 +45,12 @@ const BankingInvestmentSection = () => {
       </p>
 
       <div className="mt-6 flex gap-4 place-items-end">
-        <button className="px-6 py-3 border border- text-black rounded-md flex items-center gap-2 relative overflow-hidden group">
-          <span className="absolute inset-0 border border-black rounded-md "></span>
-          Get Started <ArrowRight />
+        <button href="/login">
+          <span className="absolute inset-0 rounded-md "></span>
+          <WhiteRoundButton
+            className="absolute inset-0 border border-green rounded "
+            text="Get Started ->"
+          />
         </button>
         {/* <button className="px-6 py-3 bg-black text-white rounded-md flex items-center gap-2">
           Get Started <ArrowRight />
