@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Bethany Elingston Font */
+@font-face {
+  font-family: "Bethany Elingston";
+  src: url("/fonts/Bethany Elingston.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -28,7 +37,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -54,8 +63,13 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
+}
+
+/* Define custom font classes */
+.font-bethany {
+  font-family: "Bethany Elingston", sans-serif;
 }
 
 @layer base {
@@ -99,6 +113,3 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
-
-
-

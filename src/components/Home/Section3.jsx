@@ -6,7 +6,10 @@ const BankingHeroSection = () => {
       {/* Left Side - Background Image */}
       <div
         className="w-full md:w-1/2 h-[300px] sm:h-[400px] md:h-auto bg-cover bg-center blur-sm md:blur-none"
-        style={{ backgroundImage: "url('https://picsum.photos/1920/700')" }}
+        style={{
+          backgroundImage:
+            "url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742813799/34c9bc1d-e039-4bb8-be9d-ac431411d9d4_duqz6d.jpg')",
+        }}
       ></div>
 
       {/* Right Side - Green Section */}

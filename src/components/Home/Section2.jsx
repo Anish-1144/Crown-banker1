@@ -61,7 +61,7 @@ const BankingInvestmentSection = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg p-6 rounded-lg text-center border-4 border-[#4CAF50] hover:bg-[#4CAF50] group"
+            className="bg-green-50  shadow-xl p-6 rounded-lg text-center border-4 border-[#4CAF50] hover:bg-[#4CAF50] group"
           >
             <div className="text-green-500 text-4xl mb-3 group-hover:text-white">
               {service.icon}

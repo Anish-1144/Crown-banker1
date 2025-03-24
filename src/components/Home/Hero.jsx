@@ -21,7 +21,7 @@ export default function Hero() {
       description:
         "As a world wide distributor of solar supplies we endeavor to provide fast and knowledgeable service, we can get you materials by sea or air.",
       image:
-        "https://res.cloudinary.com/dfcbjgt3w/image/upload/v1742798606/photo-realistic-high-resolution-image-glossy-electric-car-charging-sleek-station-against-vibr_enrkus.jpg",
+        "https://res.cloudinary.com/dygdftjr8/image/upload/v1742803597/photo-realistic-high-resolution-image-glossy-electric-car-charging-sleek-station-against-vibr_ypviwq.jpg",
     },
     {
       id: 2,
@@ -108,6 +108,14 @@ export default function Hero() {
               className="w-full h-full object-cover"
               preload="auto"
             />
+          ) : slide.image.includes("youtube.com") ? (
+            <iframe
+              src={slide.image}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="YouTube video player"
+            />
           ) : (
             <img
               src={slide.image || "/placeholder.svg"}
@@ -133,35 +141,35 @@ export default function Hero() {
                 : "opacity-0 translate-x-full"
             }`}
           >
-            {index === 0 && (
-              <div className="text-white space-y-6 text-center max-w-2xl">
-                <p className="text-sm md:text-base font-medium">
-                  {slide.tagline}
-                </p>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  {slide.title}
-                </h1>
-                <p className="text-base md:text-lg mx-auto">
-                  {slide.description}
-                </p>
-                <div className="flex flex-wrap gap-4 pt-4 justify-center">
-                  <Link
-                    href="#"
-                    className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
-                  >
-                    <span>Get Started </span>
-                    <ArrowRight size={18} />
-                  </Link>
-                  <button
-                    onClick={() => goToSlide(1)}
-                    className="flex items-center gap-2 bg-transparent hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors border-2 border-green-600"
-                  >
-                    <span>Watch video</span>
-                    <CirclePlay size={18} />
-                  </button>
-                </div>
+            <div className="text-white space-y-6 text-center max-w-2xl">
+              <p className="text-sm md:text-base font-medium font-sens">
+                {slide.tagline}
+              </p>
+              <h1 className="text-4xl md:text-7xl lg:text-7xl font-bold leading-tight font-bethany">
+                {slide.title}
+              </h1>
+              <p className="text-base md:text-lg mx-auto font-sans">
+                {slide.description}
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4 justify-center">
+                <Link
+                  href="/sign-up"
+                  className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
+                >
+                  <span>Get Started </span>
+                  <ArrowRight size={18} />
+                </Link>
+                <button
+                  onClick={() =>
+                    window.open("https://youtu.be/EWeTt4RbTVU", "_blank")
+                  }
+                  className="flex items-center gap-2 bg-transparent hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors border-2 border-green-600"
+                >
+                  <span>{index === 0 ? "Watch video" :"Watch video"}</span>
+                  <CirclePlay size={18} />
+                </button>
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

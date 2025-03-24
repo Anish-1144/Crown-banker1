@@ -1,7 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const VideoBanner = () => {
-  const [showVideo] = useState(true); // Set to true to auto-show the video
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShowVideo(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+      }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="relative bg-white py-16">
@@ -12,7 +39,7 @@ const VideoBanner = () => {
             <h2 className="text-4xl font-bold text-[#4CAF50] leading-tight mb-6 ml-4 md:ml-0">
               "Our Goal Is To Change
               <br />
-               The Modern World
+              The Modern World
               <br />
               Become Nature
               <br />
@@ -37,12 +64,12 @@ const VideoBanner = () => {
           </div>
 
           {/* Right Column - Video Section */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2" ref={videoRef}>
             <div className="relative w-full h-64 sm:h-80 lg:h-96">
               {showVideo && (
                 <iframe
                   className="w-full h-full rounded-lg shadow-lg"
-                  src="https://www.youtube.com/embed/dZyQNy3-HjU?autoplay=1"
+                  src="https://www.youtube.com/embed/EWeTt4RbTVU?autoplay=1&mute=1"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

@@ -107,7 +107,7 @@ const Team = () => {
             {/* CEO Image */}
             <div ref={ceoImageRef} className="md:w-1/3 mb-6 md:mb-0">
               <img
-                src="https://crownbankers.com/assets/img/th-1/12.png" // Replace with actual image path
+                src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742820054/2_nzcsii.jpg" // Replace with actual image path
                 alt="Adrian Cadiz"
                 className="w-full max-w-xs mx-auto rounded-lg shadow-md"
               />

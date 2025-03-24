@@ -399,19 +399,19 @@ function BusinessPlan() {
           <div className="absolute inset-0 bg-gradient-to-r from-green-/90 to-green-800/70"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto md:mx-24 px-6  py-24 md:py-36">
-          <div className="max-w-4xl">
+        <div className="relative z-10 container mx-auto  px-6  py-24 md:py-36">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="hero-animate text-green-400 font-bold text-xl md:text-3xl mb-4">
               CROWN BANKERS INVESTMENT PLAN
             </h2>
-            <h1 className="hero-animate text-4xl md:text-7xl font-bold leading-tight mb-6">
+            <h1 className="hero-animate text-4xl md:text-7xl font-bethany leading-tight mb-6">
               Go Green, Earn Green
             </h1>
-            <p className="hero-animate text-xl md:text-2xl text-green-50 mb-8 max-w-3xl">
+            <p className="hero-animate text-xl md:text-2xl text-green-50 mb-8 max-w-3xl mx-auto">
               Rule your portfolio: Invest in Forbes 500, EV, Solar, and Crypto
               with Crown Bankers!
             </p>
-            <div className="hero-animate flex flex-wrap gap-4">
+            <div className="hero-animate flex flex-wrap gap-4 justify-center">
               <Link
                 to="/contact"
                 className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-md transition-all duration-300 font-medium hover:shadow-lg hover:translate-y-[-2px]"
@@ -603,7 +603,9 @@ function BusinessPlan() {
       <section
         ref={benefitsRef}
         className="py-20 px-6 md:px-12"
-        style={{ backgroundImage: `url('/images/backgrounds/4.jpg')` }}
+        style={{
+          backgroundImage: `url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742807676/4_tbowdb.jpg')`,
+        }}
       >
         <div className="">
           <div className="container mx-auto md:px-24">
@@ -762,7 +764,9 @@ function BusinessPlan() {
       <section
         ref={evRevolutionRef}
         className="text-white py-20"
-        style={{ backgroundImage: `url('/images/backgrounds/4.jpg')` }}
+        style={{
+          backgroundImage: `url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742807676/4_tbowdb.jpg')`,
+        }}
       >
         <div className="container mx-auto px-6 md:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -827,8 +831,15 @@ function BusinessPlan() {
       {/* Income Streams Section */}
       <section
         ref={incomeStreamRef}
-        className="bg-white- text-black py-20 px-6 md:px-12 relative overflow-hidden"
+        className="py-20 px-6 md:px-12 relative overflow-hidden"
+        style={{
+          backgroundImage: `url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742807676/4_tbowdb.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
+        {/* Overlay for better text visibility */}
+
         {/* Background decoration elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
           <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-green-400 to-blue-500 blur-3xl"></div>
@@ -841,18 +852,17 @@ function BusinessPlan() {
             <div className="lg:col-span-1">
               <div className="space-y-8 sticky top-32">
                 <div className="flex items-center">
-                  {/* <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></div> */}
-                  <span className="text-black-400 font-medium flex items-center gap-1">
+                  <span className="text-white font-medium flex items-center gap-1">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></div>
                     Ways of earning
                   </span>
                 </div>
 
-                <h2 className="text-4xl md:text-6xl font-bold leading-tight text-[#4CAF50]">
+                <h2 className="text-4xl md:text-6xl font-bold leading-tight text-white">
                   Income Stream
                 </h2>
 
-                <p className="text-lg mt-8 text-gray-800 leading-relaxed">
+                <p className="text-lg mt-8 text-white/90 leading-relaxed">
                   At Crown Bankers, we provide four dynamic income streams to
                   maximize your financial growth: returns on investment in
                   high-growth sectors, a referral bonus for bringing new
@@ -861,7 +871,7 @@ function BusinessPlan() {
                   designed to enhance your professional journey.
                 </p>
 
-                <p className="text-lg text-gray-800 leading-relaxed">
+                <p className="text-lg text-white/90 leading-relaxed">
                   With these diverse income opportunities, we ensure that your
                   investments are not only profitable but also rewarding in
                   multiple ways.
@@ -875,9 +885,9 @@ function BusinessPlan() {
               className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               {/* Returns on investment */}
-              <div className="bg-[#4CAF50] rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-green-900/20 group border border-green-600/30">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-white/20 group border border-white/20">
                 <div className="flex items-center mb-5">
-                  <div className="text-green-300 mr-3 bg-green-700/40 p-3 rounded-lg group-hover:bg-green-700/60 transition-colors duration-300">
+                  <div className="text-white mr-3 bg-white/10 p-3 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
                     <svg
                       width="24"
                       height="24"
@@ -887,7 +897,7 @@ function BusinessPlan() {
                     >
                       <path
                         d="M8 7V17M12 11V17M16 7V17M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -898,7 +908,7 @@ function BusinessPlan() {
                     Returns on investment
                   </h3>
                 </div>
-                <p className="text-green-100 mb-4">
+                <p className="text-white/80 mb-4">
                   Choose from Solar Starter, Power Growth, Special packages with
                   returns of 1.5% to 2.4% over 130 to 150 days, ensuring steady
                   wealth growth.
@@ -906,7 +916,7 @@ function BusinessPlan() {
                 <div className="flex justify-end">
                   <Link
                     to="/services"
-                    className="text-green-300 hover:text-green-200 font-medium group flex items-center"
+                    className="text-white hover:text-green-300 font-medium group flex items-center"
                   >
                     Learn more{" "}
                     <span className="ml-1 transition-transform duration-300 transform group-hover:translate-x-1">
@@ -917,9 +927,9 @@ function BusinessPlan() {
               </div>
 
               {/* Referral bonus */}
-              <div className="bg-[#4CAF50] rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-green-900/20 group border border-green-600/30">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-white/20 group border border-white/20">
                 <div className="flex items-center mb-5">
-                  <div className="text-green-300 mr-3 bg-green-700/40 p-3 rounded-lg group-hover:bg-green-700/60 transition-colors duration-300">
+                  <div className="text-white mr-3 bg-white/10 p-3 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
                     <svg
                       width="24"
                       height="24"
@@ -929,21 +939,21 @@ function BusinessPlan() {
                     >
                       <path
                         d="M17 20H7C4.79086 20 3 18.2091 3 16V8C3 5.79086 4.79086 4 7 4H17C19.2091 4 21 5.79086 21 8V16C21 18.2091 19.2091 20 17 20Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
                         d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
                         d="M16 15C16 13.3431 14.2091 12 12 12C9.79086 12 8 13.3431 8 15"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -954,14 +964,14 @@ function BusinessPlan() {
                     Referral bonus
                   </h3>
                 </div>
-                <p className="text-green-100 mb-4">
+                <p className="text-white/80 mb-4">
                   Join our community-driven success at Crown Bankers! Refer new
                   investors, earn a 7% to 9% Referral Bonus, and grow together.
                 </p>
                 <div className="flex justify-end">
                   <Link
                     to="/services"
-                    className="text-green-300 hover:text-green-200 font-medium group flex items-center"
+                    className="text-white hover:text-green-300 font-medium group flex items-center"
                   >
                     Learn more{" "}
                     <span className="ml-1 transition-transform duration-300 transform group-hover:translate-x-1">
@@ -972,9 +982,9 @@ function BusinessPlan() {
               </div>
 
               {/* Binary bonus */}
-              <div className="bg-[#4CAF50] rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-green-900/20 group border border-green-600/30">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-white/20 group border border-white/20">
                 <div className="flex items-center mb-5">
-                  <div className="text-green-300 mr-3 bg-green-700/40 p-3 rounded-lg group-hover:bg-green-700/60 transition-colors duration-300">
+                  <div className="text-white mr-3 bg-white/10 p-3 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
                     <svg
                       width="24"
                       height="24"
@@ -984,28 +994,28 @@ function BusinessPlan() {
                     >
                       <path
                         d="M17 20H7C4.79086 20 3 18.2091 3 16V8C3 5.79086 4.79086 4 7 4H17C19.2091 4 21 5.79086 21 8V16C21 18.2091 19.2091 20 17 20Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
                         d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
                         d="M9 14C10.1046 14 11 13.1046 11 12C11 10.8954 10.1046 10 9 10C7.89543 10 7 10.8954 7 12C7 13.1046 7.89543 14 9 14Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
                         d="M15 14C16.1046 14 17 13.1046 17 12C17 10.8954 16.1046 10 15 10C13.8954 10 13 10.8954 13 12C13 13.1046 13.8954 14 15 14Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -1016,7 +1026,7 @@ function BusinessPlan() {
                     Binary bonus
                   </h3>
                 </div>
-                <p className="text-green-100 mb-4">
+                <p className="text-white/80 mb-4">
                   Enhance rewards through referrals with our Binary Bonus,
                   calculated on balanced growth strategy, ensuring fair and
                   streamlined distribution.
@@ -1024,7 +1034,7 @@ function BusinessPlan() {
                 <div className="flex justify-end">
                   <Link
                     to="/services"
-                    className="text-green-300 hover:text-green-200 font-medium group flex items-center"
+                    className="text-white hover:text-green-300 font-medium group flex items-center"
                   >
                     Learn more{" "}
                     <span className="ml-1 transition-transform duration-300 transform group-hover:translate-x-1">
@@ -1035,9 +1045,9 @@ function BusinessPlan() {
               </div>
 
               {/* Crown Rewards */}
-              <div className="bg-[#4CAF50] rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-green-900/20 group border border-green-600/30">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:translate-y-[-5px] transition-all duration-300 shadow-lg hover:shadow-white/20 group border border-white/20">
                 <div className="flex items-center mb-5">
-                  <div className="text-green-300 mr-3 bg-green-700/40 p-3 rounded-lg group-hover:bg-green-700/60 transition-colors duration-300">
+                  <div className="text-white mr-3 bg-white/10 p-3 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
                     <svg
                       width="24"
                       height="24"
@@ -1047,7 +1057,7 @@ function BusinessPlan() {
                     >
                       <path
                         d="M9 12H15M9 16H15M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H12.5858C12.851 3 13.1054 3.10536 13.2929 3.29289L18.7071 8.70711C18.8946 8.89464 19 9.149 19 9.41421V19C19 20.1046 18.1046 21 17 21Z"
-                        stroke="#86efac"
+                        stroke="white"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -1058,14 +1068,14 @@ function BusinessPlan() {
                     Crown Rewards
                   </h3>
                 </div>
-                <p className="text-green-100 mb-4">
+                <p className="text-white/80 mb-4">
                   In My Crown Career, earn rewards based on investments made by
                   those you bring into the network. Grow together with us!
                 </p>
                 <div className="flex justify-end">
                   <Link
                     to="/services"
-                    className="text-green-300 hover:text-green-200 font-medium group flex items-center"
+                    className="text-white hover:text-green-300 font-medium group flex items-center"
                   >
                     Learn more{" "}
                     <span className="ml-1 transition-transform duration-300 transform group-hover:translate-x-1">
@@ -1076,8 +1086,15 @@ function BusinessPlan() {
               </div>
             </div>
           </div>
-
-          {/* Add a decorative element for visual interest */}
+        </div>
+      </section>
+      <section className="py-12 sm:py-16 lg:py-20 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:mx-24">
+          <img
+            src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742810209/cards_hj8jca.png"
+            alt="Crown Bankers"
+            className="w-full h-auto object-contain"
+          />
         </div>
       </section>
 
@@ -1244,7 +1261,7 @@ function BusinessPlan() {
         ref={benefitsRef}
         className="py-20 px-6 md:px-12 relative text-white"
         style={{
-          background: `url('/images/backgrounds/4.jpg') no-repeat center center/cover`,
+          background: `url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742807676/4_tbowdb.jpg') no-repeat center center/cover`,
         }}
       >
         <div className="absolute inset-0 "></div>

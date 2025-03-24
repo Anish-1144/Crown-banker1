@@ -20,6 +20,7 @@ import Dashboard from "./Dashboard/Dashboard";
 import Genealogy from "./Dashboard/Genealogy";
 import Report from "./Dashboard/Report";
 import Vouchers from "./Dashboard/Vouchers";
+import Investment from "./Dashboard/Investment";
 
 export default function App() {
   return (
@@ -115,6 +116,15 @@ export default function App() {
         element={
           <Smoothscrolls>
             <Genealogy />
+          </Smoothscrolls>
+        }
+      />
+
+      <Route
+        path="/investment"
+        element={
+          <Smoothscrolls>
+            <Investment />
           </Smoothscrolls>
         }
       />

@@ -12,186 +12,113 @@ const QuoteRequestSection = () => {
   return (
     <div
       className="bg-gray-100"
-      style={{ backgroundImage: `url('/images/backgrounds/4.jpg')` }}
+      style={{
+        backgroundImage: `url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742807676/4_tbowdb.jpg')`,
+      }}
     >
       <section className="relative flex flex-col md:flex-row items-stretch min-h-[400px] sm:min-h-[300px] md:min-h-[400px] py-6 sm:py-12 mx-4 sm: md:mx-24">
         {/* Left Side - Blurred Background with Text */}
         <div
           className="w-full md:w-1/2 h-[150px] sm:h-[200px] md:h-auto bg-cover bg-center flex items-center justify-center shadow-xl rounded-xl "
           style={{
-            backgroundImage: `url(https://www.nexteraenergyresources.com/content/dam/neer/us/en/images/white-pine-solar.jpg)`,
+            backgroundImage: `url(https://imgs.search.brave.com/Mtt5HT25bckZTIpysL8TzEdEWjjSwjeWVSDkCn0mu30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NTI3NjcyZTJkMmE4/NDI5ZjhhZmVhMGIv/NjU0YWJmYWE2MWRk/OTQyYWNhOWNjNmU4/X3NvbGFyLnBuZw)`,
           }}
         ></div>
 
         {/* Right Side - Form */}
-        <div className="w-full md:w-1/2 bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-center shadow-xl rounded-xl">
-          <h3 className="text-lg sm:text-xl text-[#4CAF50] md:text-5xl font-bold mb-4 sm:mb-6">
+        <div className="w-full md:w-1/2 bg-white/90 backdrop-blur-sm p-6 md:p-8 flex flex-col justify-center shadow-2xl rounded-2xl">
+          <h3 className="text-3xl md:text-4xl text-[#4CAF50] font-bold mb-8  text-center">
             Calculate Your Earnings
           </h3>
-          <form className="space-y-3 sm:space-y-4">
-            {/* Name and Email */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-xs sm:text-sm font-medium text-gray-700"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="mt-1 block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base"
-                  placeholder="Name"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-xs sm:text-sm font-medium text-gray-700"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="mt-1 block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base"
-                  placeholder="Email"
-                />
-              </div>
-            </div>
-
-            {/* Phone and Address */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-xs sm:text-sm font-medium text-gray-700"
-                >
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="mt-1 block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base"
-                  placeholder="Phone"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="address"
-                  className="block text-xs sm:text-sm font-medium text-gray-700"
-                >
-                  Address
-                </label>
-                <input
-                  type="text"
-                  id="address"
-                  className="mt-1 block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base"
-                  placeholder="Address"
-                />
-              </div>
-            </div>
-
-            {/* System Data */}
+          <form className="space-y-6">
+            {/* Investment Amount */}
             <div>
-              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-                System Data
+              <label
+                htmlFor="investment"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Investment Amount
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                <div>
-                  <select className="block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base">
-                    <option>System installer?</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                  </select>
-                </div>
-                <div>
-                  <select className="block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base">
-                    <option>Solar system type?</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                  </select>
-                </div>
-                <div>
-                  <select className="block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base">
-                    <option>Monthly electric usage?</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                  </select>
-                </div>
-                <div>
-                  <select className="block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base">
-                    <option>Solar panels placed?</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                  </select>
-                </div>
-                <div>
-                  <select className="block w-full px-2 sm:px-3 py-1 sm:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 text-sm sm:text-base">
-                    <option>Materials on your roof?</option>
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                  </select>
-                </div>
+              <div className="relative">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
+                  $
+                </span>
+                <input
+                  type="number"
+                  id="investment"
+                  className="block w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  placeholder="Enter investment amount"
+                />
               </div>
             </div>
 
-            {/* Preferred Contact Method */}
+            {/* Investment Duration */}
             <div>
-              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-                Preferred Contact Method
+              <label
+                htmlFor="duration"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Investment Duration
               </label>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    name="contact-method"
-                    value="all"
-                    className="h-3 sm:h-4 w-3 sm:w-4 text-green-600 focus:ring-green-500 border-gray-300"
-                    defaultChecked
-                  />
-                  <span className="ml-1 sm:ml-2 text-xs sm:text-sm text-gray-700">
-                    All
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    name="contact-method"
-                    value="email"
-                    className="h-3 sm:h-4 w-3 sm:w-4 text-green-600 focus:ring-green-500 border-gray-300"
-                  />
-                  <span className="ml-1 sm:ml-2 text-xs sm:text-sm text-gray-700">
-                    Email
-                  </span>
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="radio"
-                    name="contact-method"
-                    value="phone"
-                    className="h-3 sm:h-4 w-3 sm:w-4 text-green-600 focus:ring-green-500 border-gray-300"
-                  />
-                  <span className="ml-1 sm:ml-2 text-xs sm:text-sm text-gray-700">
-                    Phone
-                  </span>
-                </label>
+              <select
+                id="duration"
+                className="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+              >
+                <option value="">Select duration</option>
+                <option value="3">3 Months</option>
+                <option value="6">6 Months</option>
+                <option value="12">12 Months</option>
+                <option value="24">24 Months</option>
+              </select>
+            </div>
+
+            {/* Investment Type */}
+            <div>
+              <label
+                htmlFor="type"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Investment Type
+              </label>
+              <select
+                id="type"
+                className="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+              >
+                <option value="">Select investment type</option>
+                <option value="solar">Solar Energy</option>
+                <option value="ev">Electric Vehicles</option>
+                <option value="forbes">Forbes 500</option>
+              </select>
+            </div>
+
+            {/* Results Display */}
+            <div className="bg-gray-50 rounded-lg p-4 space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Monthly Return:</span>
+                <span className="text-[#4CAF50] font-semibold">$0.00</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Annual Return:</span>
+                <span className="text-[#4CAF50] font-semibold">$0.00</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Total Return:</span>
+                <span className="text-[#4CAF50] font-semibold">$0.00</span>
               </div>
             </div>
 
-            {/* Submit Button */}
+            {/* Calculate Button */}
             <button
               type="submit"
-              className="w-full bg-green-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-md font-semibold hover:bg-green-700 transition-colors text-sm sm:text-base"
+              className="w-full bg-[#4CAF50] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3d8b40] transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
             >
-              Submit Request
+              Calculate Returns
             </button>
 
-            {/* Footer Text */}
-            <p className="text-xs text-gray-500 text-center mt-2 sm:mt-4">
-              Receive an accurate quote within 3-5 days when you fill out the
-              form on this page.
+            {/* Disclaimer */}
+            <p className="text-xs text-gray-500 text-center mt-4">
+              *Returns are estimated based on historical performance and market
+              conditions. Actual returns may vary.
             </p>
           </form>
         </div>

@@ -115,7 +115,11 @@ export default function Contact() {
   }, []);
 
   return (
-    <div style={{ backgroundImage: `url('/images/backgrounds/4.jpg')` }}>
+    <div
+      style={{
+        backgroundImage: `url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742807676/4_tbowdb.jpg')`,
+      }}
+    >
       <div className="container mx-auto px-4 py-12 md:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Column - Contact Information */}

@@ -112,7 +112,7 @@ function Nevbar() {
               <div className="flex items-center">
                 <div className="bg-white rounded-md flex items-center justify-center  ">
                   <img
-                    src="/images/logo1.png"
+                    src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742818322/logo1_mp91bc.png"
                     alt="logo1"
                     height={300}
                     width={350}
