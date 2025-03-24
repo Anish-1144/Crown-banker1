@@ -1,14 +1,17 @@
-
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 // import Link from "next/link";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  CirclePlay,
+} from "lucide-react";
 import SolarEnergycards from "./Card";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const autoPlayRef = useRef(null);
 
   const slides = [
     {
@@ -17,7 +20,8 @@ export default function Hero() {
       title: "We Invest In The Future Of Planet!",
       description:
         "As a world wide distributor of solar supplies we endeavor to provide fast and knowledgeable service, we can get you materials by sea or air.",
-      image: "/images/wind-turbines-agricultural-field.png",
+      image:
+        "https://res.cloudinary.com/dfcbjgt3w/image/upload/v1742798606/photo-realistic-high-resolution-image-glossy-electric-car-charging-sleek-station-against-vibr_enrkus.jpg",
     },
     {
       id: 2,
@@ -26,7 +30,7 @@ export default function Hero() {
       description:
         "As a world wide distributor of solar supplies we endeavor to provide fast and knowledgeable service, we can get you materials by sea or air.",
       image:
-        "https://media.gettyimages.com/id/1032683612/photo/solar-energy-and-wind-power-stations.jpg?s=612x612&w=0&k=20&c=KXElDTxrRrXG72sVD4QGnctJU1iSMroKPOl6XUfGHNk=",
+        "https://res.cloudinary.com/dfcbjgt3w/video/upload/v1742800328/NEW_CROWN_BANKERS_vqgvbs.mp4",
     },
   ];
 
@@ -63,43 +67,30 @@ export default function Hero() {
     }, 500);
   };
 
+  // Control video playback when slide changes
   useEffect(() => {
-    const startAutoPlay = () => {
-      autoPlayRef.current = setInterval(() => {
-        nextSlide();
-      }, 5000);
-    };
+    // Find the video element for slide index 1 (second slide)
+    const videoElement = document.querySelector(
+      `video[src="${slides[1].image}"]`
+    );
 
-    startAutoPlay();
-
-    return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current);
+    // Only work with the video if it exists
+    if (videoElement) {
+      if (currentSlide === 1) {
+        // If we're on the second slide, reset the video to the beginning and play it
+        videoElement.currentTime = 0;
+        videoElement
+          .play()
+          .catch((err) => console.log("Video play error:", err));
+      } else {
+        // If we're not on the second slide, pause the video
+        videoElement.pause();
       }
-    };
-  }, [nextSlide]);
-
-  const pauseAutoPlay = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
     }
-  };
-
-  const resumeAutoPlay = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-    }
-    autoPlayRef.current = setInterval(() => {
-      nextSlide();
-    }, 5000);
-  };
+  }, [currentSlide, slides]);
 
   return (
-    <div
-      className="relative w-full h-[600px] md:h-[700px] overflow-hidden"
-      onMouseEnter={pauseAutoPlay}
-      onMouseLeave={resumeAutoPlay}
-    >
+    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -107,21 +98,33 @@ export default function Hero() {
             currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
         >
-          <img
-            src={slide.image || "/placeholder.svg"}
-            alt={`Slide ${index + 1} background`}
-            className="w-full h-full object-cover"
-          />
+          {slide.image.includes("video") ? (
+            <video
+              src={slide.image}
+              autoPlay={currentSlide === index}
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+              preload="auto"
+            />
+          ) : (
+            <img
+              src={slide.image || "/placeholder.svg"}
+              alt={`Slide ${index + 1} background`}
+              className="w-full h-full object-cover"
+            />
+          )}
 
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
       ))}
 
-      <div className="relative z-20 h-full flex flex-col justify-center  px-6 max-w-7xl mx-6 md:mx-24">
+      <div className="relative z-20 h-full flex flex-col justify-center items-center px-6 max-w-7xl mx-auto">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 flex flex-col justify-center transition-all duration-500 ease-in-out transform ${
+            className={`absolute inset-0 flex flex-col justify-center items-center transition-all duration-500 ease-in-out transform ${
               currentSlide === index
                 ? "opacity-100 translate-x-0"
                 : index < currentSlide ||
@@ -130,33 +133,42 @@ export default function Hero() {
                 : "opacity-0 translate-x-full"
             }`}
           >
-            <div className="text-white space-y-6 md:w-1/2">
-              <p className="text-sm md:text-base font-medium">
-                {slide.tagline}
-              </p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                {slide.title}
-              </h1>
-              <p className="text-base md:text-lg max-w-xl">
-                {slide.description}
-              </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                {/* <Link
-                  href="#"
-                  className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
-                >
-                  {/* <span>More About Us</span> 
-                  <ArrowRight size={18} />
-                </Link> */}
+            {index === 0 && (
+              <div className="text-white space-y-6 text-center max-w-2xl">
+                <p className="text-sm md:text-base font-medium">
+                  {slide.tagline}
+                </p>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                  {slide.title}
+                </h1>
+                <p className="text-base md:text-lg mx-auto">
+                  {slide.description}
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4 justify-center">
+                  <Link
+                    href="#"
+                    className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors"
+                  >
+                    <span>Get Started </span>
+                    <ArrowRight size={18} />
+                  </Link>
+                  <button
+                    onClick={() => goToSlide(1)}
+                    className="flex items-center gap-2 bg-transparent hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors border-2 border-green-600"
+                  >
+                    <span>Watch video</span>
+                    <CirclePlay size={18} />
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         ))}
       </div>
 
       <button
         onClick={prevSlide}
-        className=" hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
         aria-label="Previous slide"
       >
         <ChevronLeft size={30} />
@@ -164,7 +176,7 @@ export default function Hero() {
 
       <button
         onClick={nextSlide}
-        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
         aria-label="Next slide"
       >
         <ChevronRight size={30} />

@@ -16,6 +16,10 @@ import Privacy from "./pages/Privacy";
 import Term from "./pages/Term";
 import Fqa from "./pages/Fqa";
 import Smoothscrolls from "./components/Smoothscrolls";
+import Dashboard from "./Dashboard/Dashboard";
+import Genealogy from "./Dashboard/Genealogy";
+import Report from "./Dashboard/Report";
+import Vouchers from "./Dashboard/Vouchers";
 
 export default function App() {
   return (
@@ -96,6 +100,42 @@ export default function App() {
         <Route path="solar-purchase-document" element={<SolarAgreement />} />
         <Route path="trade-view" element={<TradeView />} />
       </Route>
+
+      <Route
+        path="/dashboard"
+        element={
+          <Smoothscrolls>
+            <Dashboard />
+          </Smoothscrolls>
+        }
+      />
+
+      <Route
+        path="/genealogy"
+        element={
+          <Smoothscrolls>
+            <Genealogy />
+          </Smoothscrolls>
+        }
+      />
+
+      <Route
+        path="/report"
+        element={
+          <Smoothscrolls>
+            <Report />
+          </Smoothscrolls>
+        }
+      />
+
+      <Route
+        path="/vouchers"
+        element={
+          <Smoothscrolls>
+            <Vouchers />
+          </Smoothscrolls>
+        }
+      />
 
       <Route
         path="*"
