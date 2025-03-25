@@ -21,7 +21,7 @@ const CryptoCard = () => {
           {/* Card 1: Seamless Online Shopping */}
           <div className="bg-white flex flex-col border-green-500 border-4 shadow-xl rounded-xl w-full max-w-xs">
             <img
-              src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742811539/cards4_flupcz.png"
+              src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742887535/1_12_jpiwyg.png"
               alt=""
               className="w-full h-auto"
             />
