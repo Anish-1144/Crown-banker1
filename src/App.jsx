@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 // imporfrom "./component; // Correct import
 import Home from "./pages/Home";
 import Services from "./pages/Service";
@@ -21,8 +22,18 @@ import Genealogy from "./Dashboard/Genealogy";
 import Report from "./Dashboard/Report";
 import Vouchers from "./Dashboard/Vouchers";
 import Investment from "./Dashboard/Investment";
+import DashboardLayout from "./Dashboard/DashboardLayout";
+import MyProfile from "./Dashboard/MyProfile";
+import Support from "./Dashboard/Support";
+// import Sidebar from "./Dashboard/Sidebar";
 
 export default function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
     <Routes>
       {/* Apply smooth scrolling to main site pages */}
@@ -102,50 +113,28 @@ export default function App() {
         <Route path="trade-view" element={<TradeView />} />
       </Route>
 
+      {/* Dashboard Routes */}
       <Route
         path="/dashboard"
         element={
-          <Smoothscrolls>
-            <Dashboard />
-          </Smoothscrolls>
+          <DashboardLayout isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
         }
-      />
+      >
+        <Route index element={<Dashboard isDarkMode={isDarkMode} />} />
+        <Route path="investment" element={<Investment />} />
+        <Route path="vouchers" element={<Vouchers />} />
+        <Route path="genealogy" element={<Genealogy />} />
+        <Route path="report" element={<Report />}>
+        <Route path="support" element={<div><Support/></div>} />
 
-      <Route
-        path="/genealogy"
-        element={
-          <Smoothscrolls>
-            <Genealogy />
-          </Smoothscrolls>
-        }
-      />
-
-      <Route
-        path="/investment"
-        element={
-          <Smoothscrolls>
-            <Investment />
-          </Smoothscrolls>
-        }
-      />
-
-      <Route
-        path="/report"
-        element={
-          <Smoothscrolls>
-            <Report />
-          </Smoothscrolls>
-        }
-      />
-
-      <Route
-        path="/vouchers"
-        element={
-          <Smoothscrolls>
-            <Vouchers />
-          </Smoothscrolls>
-        }
-      />
+          <Route
+            path="profile"
+            element={<Navigate to="/dashboard/profile" replace />}
+          />
+        </Route>
+        <Route path="profile" element={<MyProfile isDarkMode={isDarkMode} />} />
+        <Route path="support" element={<div><Support/></div>} />
+      </Route>
 
       <Route
         path="*"

@@ -1,417 +1,441 @@
-import React from "react";
-import { FiSearch, FiCalendar, FiFilter, FiPlus } from "react-icons/fi";
-import { BiMoney, BiLineChart } from "react-icons/bi";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { FiArrowRight } from "react-icons/fi";
 import { IoWalletOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
-export default function Dashboard() {
+export default function Dashboard({ isDarkMode }) {
+  const [isWithdrawModalOpen, setIsWithdrawModalOpen] = useState(false);
+  const navigate = useNavigate(); // Hook for navigation
+
+  const userInfo = {
+    userId: "CROWN-108470",
+    name: "anish",
+    balance: "0.00",
+    sponsorName: "",
+    sponsorEmail: "crownbankersofficial@gmail.com",
+    currency: "US Dollar",
+    status: "Active",
+  };
+
+  const wallets = [
+    { name: "ROI Wallet", amount: "$0.00", color: "emerald" },
+    { name: "R&B Wallet", amount: "$0.00", color: "emerald" },
+    { name: "Extra income wallet", amount: "$0.00", color: "emerald" },
+    { name: "Coupons", amount: "$0.00", color: "emerald" },
+    { name: "Total Investment", amount: "$0.00", color: "emerald" },
+    { name: "Total Withdrawal", amount: "$0.00", color: "emerald" },
+  ];
+
+  const handleWithdrawClick = () => {
+    setIsWithdrawModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsWithdrawModalOpen(false);
+  };
+
+  const handleReinvestClick = () => {
+    navigate("/dashboard/vouchers"); // Navigate to /dashboard/vouchers
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
-      {/* Header */}
-      <header className="flex justify-between items-center mb-8">
-        <div>
-          <h1 className="text-2xl font-bold">Dashboard</h1>
-          <p className="text-gray-400 text-sm">Let's check your update today</p>
-        </div>
-        <div className="flex items-center gap-6">
-          <div className="relative">
-            <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="bg-gray-800 rounded-lg pl-10 pr-4 py-2 text-sm w-64 focus:outline-none focus:ring-1 focus:ring-gray-700"
-            />
-          </div>
-          <button className="p-2 text-xl text-gray-400 hover:text-white">
-            K
-          </button>
-          <button className="p-2 text-xl text-gray-400 hover:text-white">
-            🌞
-          </button>
-          <div className="relative">
-            <button className="p-2 text-xl text-gray-400 hover:text-white">
-              🔔
-            </button>
-            <span className="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
-          </div>
-          <button className="p-2 text-xl text-gray-400 hover:text-white">
-            💬
-          </button>
-          <button className="p-2 text-xl text-gray-400 hover:text-white">
-            🎁
-          </button>
-          <div className="flex items-center gap-2 ml-4">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center overflow-hidden">
-              <img
-                src="https://i.pravatar.cc/100"
-                alt="Profile"
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div>
-              <p className="font-medium">John Doe</p>
-              <p className="text-gray-400 text-xs">Super Admin</p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <div className="grid grid-cols-4 gap-6">
-        {/* Stats Cards */}
-        <div className="bg-gray-800 rounded-xl p-5 col-span-1">
-          <div className="flex justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-green-900 flex items-center justify-center">
-                <BiMoney className="text-green-500" />
+    <div className={`p-6 min-h-screen `}>
+      <div className="max-w-7xl mx-auto space-y-6">
+        {/* User Info and Wallets Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* User Info Card */}
+          <div
+            className={`rounded-2xl p-6 backdrop-blur-sm border ${
+              isDarkMode
+                ? "bg-gray-100 border-gray-700 text-white shadow-lg" // Dark theme classes
+                : "bg-gray-900 border-gray-200 text-black shadow-lg" // Light theme classes
+            }`}
+          >
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  User ID
+                </p>
+                <p className="font-medium">{userInfo.userId}</p>
               </div>
-              <span>Total earnings</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-5 w-5 rounded-full bg-gray-700 flex items-center justify-center text-xs">
-                👤
+              <div className="space-y-1">
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Name
+                </p>
+                <p className="font-medium">{userInfo.name}</p>
               </div>
-              <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center text-xs">
-                $
+              <div className="space-y-1">
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Your Balance
+                </p>
+                <p className="font-medium text-emerald-400">
+                  ${userInfo.balance}
+                </p>
               </div>
-            </div>
-          </div>
-          <h2 className="text-3xl font-bold mb-2">$7,245.00</h2>
-          <div className="flex items-center gap-2">
-            <span className="text-green-500 text-sm">
-              ↑ 3.5% from last week
-            </span>
-            <div className="h-10 flex-grow">
-              <BiLineChart className="text-green-500 w-full h-full" />
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-gray-800 rounded-xl p-5 col-span-1">
-          <div className="flex justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-green-900 flex items-center justify-center">
-                <BiMoney className="text-green-500" />
+              <div className="space-y-1">
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Sponsor Name
+                </p>
+                <p className="font-medium">{userInfo.sponsorName || "-"}</p>
               </div>
-              <span>Total Spending</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-5 w-5 rounded-full bg-gray-700 flex items-center justify-center text-xs">
-                👤
+              <div className="col-span-2 space-y-1">
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Sponsor Email
+                </p>
+                <p className="font-medium truncate">{userInfo.sponsorEmail}</p>
               </div>
-              <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center text-xs">
-                $
+              <div className="space-y-1">
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Currency
+                </p>
+                <p className="font-medium">{userInfo.currency}</p>
               </div>
-            </div>
-          </div>
-          <h2 className="text-3xl font-bold mb-2">$7,245.00</h2>
-          <div className="flex items-center gap-2">
-            <span className="text-green-500 text-sm">
-              ↑ 3.5% from last week
-            </span>
-            <div className="h-10 flex-grow">
-              <BiLineChart className="text-green-500 w-full h-full" />
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-gray-800 rounded-xl p-5 col-span-1">
-          <div className="flex justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-green-900 flex items-center justify-center">
-                <BiMoney className="text-green-500" />
+              <div className="space-y-1">
+                <p
+                  className={`text-sm ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Status
+                </p>
+                <p className="font-medium text-emerald-400">
+                  {userInfo.status}
+                </p>
               </div>
-              <span>Spending Goal</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="h-5 w-5 rounded-full bg-gray-700 flex items-center justify-center text-xs">
-                👤
-              </div>
-              <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center text-xs">
-                $
-              </div>
-            </div>
-          </div>
-          <h2 className="text-3xl font-bold mb-2">$7,245.00</h2>
-          <div className="flex items-center gap-2">
-            <span className="text-green-500 text-sm">
-              ↑ 3.5% from last week
-            </span>
-            <div className="h-10 flex-grow">
-              <BiLineChart className="text-green-500 w-full h-full" />
-            </div>
-          </div>
-        </div>
-
-        {/* Wallet Card */}
-        <div className="bg-gray-800 rounded-xl p-5 col-span-1">
-          <div className="flex justify-between mb-6">
-            <h3 className="font-bold">My Wallet</h3>
-            <button className="text-gray-400">⋮</button>
-          </div>
-          <div className="bg-red-600 rounded-xl p-4 h-40 relative flex flex-col justify-between">
-            <div className="flex justify-between">
-              <div className="h-10 w-10">
-                <div className="h-6 w-10 bg-yellow-400 rounded-sm"></div>
-              </div>
-              <div className="text-right">
-                <span className="text-sm">BankCo.</span>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <span className="text-xs">Balance:</span>
-                <span className="text-xs">👁️</span>
-              </div>
-              <div className="text-xl font-bold">$24,098.00</div>
-              <div className="text-right text-sm">VISA</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Revenue Flow Chart */}
-        <div className="bg-gray-800 rounded-xl p-5 col-span-2 row-span-1">
-          <div className="flex justify-between mb-4">
-            <h3 className="font-bold">Revenue Flow</h3>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                <span className="text-sm">Pending</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                <span className="text-sm">Signed</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-3 w-3 rounded-full bg-orange-500"></div>
-                <span className="text-sm">Lost</span>
-              </div>
-              <button className="flex items-center gap-1 text-sm bg-gray-700 px-3 py-1 rounded-lg">
-                <span>Jan 10 - Jan 16</span>
-                <span>▼</span>
-              </button>
             </div>
           </div>
 
-          {/* Placeholder for chart */}
-          <div className="h-60 flex items-end justify-between">
-            {[
-              "Jan",
-              "Feb",
-              "Mar",
-              "Apr",
-              "May",
-              "Jun",
-              "Jul",
-              "Aug",
-              "Sep",
-              "Oct",
-              "Nov",
-              "Dec",
-            ].map((month, index) => (
+          {/* Wallets Grid */}
+          <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-3 gap-4">
+            {wallets.map((wallet, index) => (
               <div
-                key={month}
-                className="flex flex-col items-center gap-2 w-full"
+                key={index}
+                className={`rounded-2xl p-4 backdrop-blur-sm border ${
+                  isDarkMode
+                    ? "bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10"
+                    : "bg-white border-gray-200/50 shadow-lg "
+                }`}
               >
-                <div
-                  className="w-4/5 bg-gray-700 rounded-sm"
-                  style={{ height: `${Math.random() * 80 + 20}px` }}
-                ></div>
-                <span className="text-xs text-gray-400">{month}</span>
+                <div className="flex items-center gap-2 text-emerald-400 mb-2">
+                  <IoWalletOutline className="text-xl" />
+                  <span className="text-sm font-medium">{wallet.name}</span>
+                </div>
+                <p className="text-xl font-bold">{wallet.amount}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Efficiency Donut Chart */}
-        <div className="bg-gray-800 rounded-xl p-5 col-span-2 row-span-1">
-          <div className="flex justify-between mb-4">
-            <h3 className="font-bold">Efficiency</h3>
-            <button className="flex items-center gap-1 text-sm bg-gray-700 px-3 py-1 rounded-lg">
-              <span>Monthly</span>
-              <span>▼</span>
-            </button>
-          </div>
-
-          <div className="flex h-60">
-            {/* Placeholder for donut chart */}
-            <div className="w-1/2 flex items-center justify-center">
-              <div className="relative h-40 w-40 rounded-full border-8 border-gray-700">
-                <div
-                  className="absolute top-0 left-0 h-full w-full rounded-full border-t-8 border-r-8 border-green-500"
-                  style={{ clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)" }}
-                ></div>
-                <div
-                  className="absolute top-0 left-0 h-full w-full rounded-full border-b-8 border-l-8 border: yellow-400"
-                  style={{
-                    clipPath: "polygon(0 50%, 100% 50%, 100% 100%, 0 100%)",
-                  }}
-                ></div>
-                <div className="absolute inset-4 rounded-full bg-gray-800 flex items-center justify-center">
-                  <div className="h-24 w-24 rounded-full bg-gray-900"></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="w-1/2 flex flex-col gap-6">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500 text-lg">$5,230</span>
-                  <span className="text-green-500">↑</span>
-                </div>
-                <p className="text-gray-400">Arrival</p>
-              </div>
-
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-500 text-lg">$6,230</span>
-                  <span className="text-green-500">↑</span>
-                </div>
-                <p className="text-gray-400">Spending</p>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2">
-                <div className="flex items-center gap-1">
-                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                  <span className="text-xs">Goal</span>
-                </div>
-                <div className="text-right text-xs">13%</div>
-
-                <div className="flex items-center gap-1">
-                  <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                  <span className="text-xs">Spending</span>
-                </div>
-                <div className="text-right text-xs">28%</div>
-
-                <div className="flex items-center gap-1">
-                  <div className="h-3 w-3 rounded-full bg-gray-400"></div>
-                  <span className="text-xs">Others</span>
-                </div>
-                <div className="text-right text-xs">59%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Transfer */}
-        <div className="bg-gray-800 rounded-xl p-5 col-span-1">
-          <div className="flex justify-between mb-6">
-            <h3 className="font-bold">Quick Transfer</h3>
-          </div>
-
-          <div className="flex justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-12 rounded-md bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center text-xs">
-                💳
-              </div>
-              <span>Debit</span>
-            </div>
-            <button className="flex items-center gap-1 text-sm bg-gray-700 px-3 py-1 rounded-lg">
-              <span>$10,431</span>
-              <span>▼</span>
-            </button>
-          </div>
-
-          <div className="mb-6">
-            <label className="text-sm text-gray-400 mb-2 block">
-              Enter amount
-            </label>
-            <div className="flex border border-gray-700 rounded-lg p-2">
-              <span className="text-lg">$</span>
+        {/* Wallet Update and Actions Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Wallet Update Card */}
+          <div
+            className={`rounded-2xl p-6 backdrop-blur-sm border ${
+              isDarkMode
+                ? "bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10"
+                : "bg-white border-gray-200/50 shadow-lg "
+            }`}
+          >
+            <h3 className="text-lg font-semibold mb-4">
+              Update Wallet Address
+            </h3>
+            <p
+              className={`text-sm mb-4 ${
+                isDarkMode ? "text-gray-300" : "text-gray-500"
+              }`}
+            >
+              Please enter your Withdrawal Wallet Address
+              (Tether-TRC20[USDT.TRC20])
+            </p>
+            <div className="space-y-4">
               <input
                 type="text"
-                className="bg-transparent border-none focus:outline-none w-full"
+                placeholder="Enter Wallet Address"
+                className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                  isDarkMode
+                    ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white placeholder-gray-400"
+                    : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
+                } focus:ring-1 focus:ring-emerald-500 focus:outline-none`}
               />
+              <button className="w-full py-3 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white font-medium transition-colors backdrop-blur-sm">
+                Continue
+              </button>
+              <p className="text-sm text-red-400">
+                * To keep your money safe, the address for your cryptocurrency
+                wallet can't be changed later. Be careful and don't share
+                important details to protect your money.
+              </p>
             </div>
           </div>
 
-          <div className="flex justify-between">
-            <div className="flex -space-x-2">
-              <div className="h-8 w-8 rounded-full bg-blue-500"></div>
-              <div className="h-8 w-8 rounded-full bg-red-500"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Team Chat */}
-        <div className="bg-gray-800 rounded-xl p-5 col-span-1">
-          <div className="flex justify-between mb-6">
-            <h3 className="font-bold">Team Chat</h3>
-            <div className="flex -space-x-2">
-              <div className="h-8 w-8 rounded-full bg-blue-500 border-2 border-gray-800"></div>
-              <div className="h-8 w-8 rounded-full bg-red-500 border-2 border-gray-800"></div>
-              <button className="h-8 w-8 rounded-full bg-gray-700 flex items-center justify-center text-xs ml-1">
-                <FiPlus />
+          {/* Actions and Referral Card */}
+          <div
+            className={`rounded-2xl p-6 backdrop-blur-sm border ${
+              isDarkMode
+                ? "bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10"
+                : "bg-white border-gray-200/50 shadow-lg "
+            }`}
+          >
+            <div className="flex justify-between items-center mb-6">
+              <button
+                onClick={handleWithdrawClick}
+                className="px-6 py-3 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white font-medium transition-colors backdrop-blur-sm flex items-center gap-2"
+              >
+                Withdraw <FiArrowRight />
+              </button>
+              <button
+                onClick={handleReinvestClick}
+                className="px-6 py-3 rounded-xl bg-emerald-600/90 hover:bg-emerald-700/90 text-white font-medium transition-colors backdrop-blur-sm flex items-center gap-2"
+              >
+                Reinvest <FiArrowRight />
               </button>
             </div>
-          </div>
 
-          <div className="border-t border-gray-700 pt-4">
-            <div className="flex gap-3 items-start">
-              <div className="h-10 w-10 rounded-full bg-blue-500 flex-shrink-0"></div>
+            <div className="space-y-6">
               <div>
-                <p className="text-sm">Hi. What can I help you with?</p>
-                <p className="text-xs text-gray-400 mt-1">8:00 PM</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Transactions Table */}
-        <div className="bg-gray-800 rounded-xl p-5 col-span-4">
-          <div className="mb-6">
-            <div className="relative mb-6">
-              <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search by name, email, or others..."
-                className="bg-gray-900 rounded-lg pl-10 pr-4 py-3 text-sm w-full focus:outline-none focus:ring-1 focus:ring-gray-700"
-              />
-            </div>
-
-            <div className="flex justify-between">
-              <div className="grid grid-cols-4 gap-4 w-full">
-                <div>
-                  <h4 className="text-sm text-gray-400 mb-2">Location</h4>
-                  <div className="flex justify-between items-center bg-gray-900 rounded-lg p-3">
-                    <span className="text-sm">State or province</span>
-                    <span>▼</span>
+                <h3 className="text-lg font-semibold mb-4">Referral Link</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p
+                      className={`text-sm mb-2 ${
+                        isDarkMode ? "text-gray-300" : "text-gray-500"
+                      }`}
+                    >
+                      Left link
+                    </p>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value="https://crownbankers.com/signup?sponsorId=CROWN-10847&position=left"
+                        readOnly
+                        className={`flex-1 p-3 rounded-xl border backdrop-blur-sm ${
+                          isDarkMode
+                            ? "bg-gray-700/30 border-gray-600 text-white"
+                            : "bg-gray-50/30 border-gray-200"
+                        }`}
+                      />
+                      <button className="px-4 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white transition-colors backdrop-blur-sm">
+                        Copy link
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h4 className="text-sm text-gray-400 mb-2">Amount Spent</h4>
-                  <div className="flex justify-between items-center bg-gray-900 rounded-lg p-3">
-                    <span className="text-sm">State or province</span>
-                    <span>▼</span>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-sm text-gray-400 mb-2">
-                    Transaction list Date
-                  </h4>
-                  <div className="flex justify-between items-center bg-gray-900 rounded-lg p-3">
-                    <span className="text-sm">State or province</span>
-                    <FiCalendar />
-                  </div>
-                </div>
-                <div>
-                  <h4 className="text-sm text-gray-400 mb-2">
-                    Type of transaction
-                  </h4>
-                  <div className="flex justify-between items-center bg-gray-900 rounded-lg p-3">
-                    <span className="text-sm">State or province</span>
-                    <span>▼</span>
+                  <div>
+                    <p
+                      className={`text-sm mb-2 ${
+                        isDarkMode ? "text-gray-300" : "text-gray-500"
+                      }`}
+                    >
+                      Right link
+                    </p>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value="https://crownbankers.com/signup?sponsorId=CROWN-10847&position=right"
+                        readOnly
+                        className={`flex-1 p-3 rounded-xl border backdrop-blur-sm ${
+                          isDarkMode
+                            ? "bg-gray-700/30 border-gray-600 text-white"
+                            : "bg-gray-50/30 border-gray-200"
+                        }`}
+                      />
+                      <button className="px-4 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white transition-colors backdrop-blur-sm">
+                        Copy link
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-              <button className="ml-4 flex items-center gap-2 text-sm bg-green-900 text-green-500 px-4 py-2 rounded-lg self-end">
-                <FiFilter />
-                <span>Filters</span>
-              </button>
+
+              <div>
+                <h3 className="text-lg font-semibold mb-4 bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10 rounded-lg p-4">
+                  My Career : Level 0 -{" "}
+                  <span className={isDarkMode ? "text-gray-300" : "text-gray-"}>
+                    Next Level: 1 - Bronze
+                  </span>
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <span className="text-emerald-400">●</span>
+                      <span>Left Business</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span>$0.00</span>
+                      <span
+                        className={
+                          isDarkMode ? "text-gray-300" : "text-gray-500"
+                        }
+                      >
+                        Target: $10000.00
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <span className="text-emerald-400">●</span>
+                      <span>Right Business</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <span>$0.00</span>
+                      <span
+                        className={
+                          isDarkMode ? "text-gray-300" : "text-gray-500"
+                        }
+                      >
+                        Target: $10000.00
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Withdraw Modal */}
+      {isWithdrawModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div
+            className={`rounded-2xl p-6 w-full max-w-md border ${
+              isDarkMode
+                ? "bg-gray-800/90 border-gray-700/50 shadow-lg shadow-emerald-900/10"
+                : "bg-white border-gray-200/50 shadow-lg"
+            }`}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold">Withdraw Fund</h3>
+              <button onClick={handleCloseModal}>
+                <IoClose className="text-2xl" />
+              </button>
+            </div>
+            <p
+              className={`text-sm mb-4 ${
+                isDarkMode ? "text-gray-300" : "text-gray-500"
+              }`}
+            >
+              Enter the amount you wish to withdraw from your account. Please
+              note that the withdrawal request will be approved within 0 to 8
+              hours.
+            </p>
+            <div className="space-y-4">
+              {/* Select Wallet */}
+              <div>
+                <label
+                  className={`block text-sm font-medium mb-1 ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Select Wallet
+                </label>
+                <select
+                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                    isDarkMode
+                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white"
+                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
+                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none appearance-none`}
+                >
+                  <option>ROI Wallet</option>
+                  <option>R&B Wallet</option>
+                  <option>Extra income wallet</option>
+                </select>
+              </div>
+
+              {/* Withdrawal Method */}
+              <div>
+                <label
+                  className={`block text-sm font-medium mb-1 ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Withdrawal Method
+                </label>
+                <select
+                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                    isDarkMode
+                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white"
+                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
+                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none appearance-none`}
+                >
+                  <option>Virtual Card</option>
+                  <option>Bank Transfer</option>
+                  <option>Crypto Wallet</option>
+                </select>
+              </div>
+
+              {/* Enter Amount */}
+              <div>
+                <label
+                  className={`block text-sm font-medium mb-1 ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Enter Amount
+                </label>
+                <input
+                  type="number"
+                  placeholder="0"
+                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                    isDarkMode
+                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white placeholder-gray-400"
+                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
+                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none`}
+                />
+              </div>
+
+              {/* Enter Security Pin */}
+              <div>
+                <label
+                  className={`block text-sm font-medium mb-1 ${
+                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                  }`}
+                >
+                  Enter Your Security Pin
+                </label>
+                <input
+                  type="password"
+                  placeholder="Enter Security Pin"
+                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                    isDarkMode
+                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white placeholder-gray-400"
+                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
+                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none`}
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button className="w-full py-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors backdrop-blur-sm">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

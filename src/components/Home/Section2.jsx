@@ -1,13 +1,15 @@
 // import { FaArrowRight } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
 import WhiteRoundButton from "../ui/WhiteRoundButton";
+import { Link, useLocation } from "react-router-dom";
+
 
 const services = [
   {
-    title: "Banking & Financial Services",
+    title: " EV Investments & Infrastructure GrowthStrategic",
     description:
-      "Reliable banking solutions designed for financial institutions to optimize...",
-    icon: "🌞",
+      " Investment opportunities in the booming EV sector, including charging networks, battery technology, and smart mobility…",
+    icon: "🚗",
   },
   {
     title: "Investment & Wealth Management",
@@ -22,10 +24,10 @@ const services = [
     icon: "🔗",
   },
   {
-    title: "Fintech & Digital Payments",
+    title: "Solar Energy Investments & Green Returns",
     description:
-      "Innovative fintech solutions such as mobile banking, digital wallets, and instant payment...",
-    icon: "🏭",
+      " Profitable investment avenues in solar energy, from large-scale solar farms to innovative renewable tech solutions…",
+    icon: "☀️",
   },
 ];
 
@@ -45,13 +47,9 @@ const BankingInvestmentSection = () => {
       </p>
 
       <div className="mt-6 flex gap-4 place-items-end">
-        <button href="/login">
-          <span className="absolute inset-0 rounded-md "></span>
-          <WhiteRoundButton
-            className="absolute inset-0 border border-green rounded "
-            text="Get Started ->"
-          />
-        </button>
+        <Link to="/login">
+          <WhiteRoundButton className="" text="Get Start ->" />
+        </Link>
         {/* <button className="px-6 py-3 bg-black text-white rounded-md flex items-center gap-2">
           Get Started <ArrowRight />
         </button> */}
@@ -73,7 +71,7 @@ const BankingInvestmentSection = () => {
               {service.description}
             </p>
             <a
-              href="#"
+              href="/Services"
               className="text-green-600 font-semibold flex items-center justify-center mt-4 group-hover:text-white"
             >
               <span>Explore More</span>

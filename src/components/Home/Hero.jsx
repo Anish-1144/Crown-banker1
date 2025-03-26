@@ -165,7 +165,7 @@ export default function Hero() {
                   }
                   className="flex items-center gap-2 bg-transparent hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors border-2 border-green-600"
                 >
-                  <span>{index === 0 ? "Watch video" :"Watch video"}</span>
+                  <span>{index === 0 ? "Watch video" : "Watch video"}</span>
                   <CirclePlay size={18} />
                 </button>
               </div>

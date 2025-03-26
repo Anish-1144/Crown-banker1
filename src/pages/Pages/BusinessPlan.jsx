@@ -392,7 +392,7 @@ function BusinessPlan() {
       >
         <div className="absolute inset-0 z-0">
           <img
-            src="https://crownbankers.com/assets/img/plan/bg.jpg"
+            src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742970515/bg_qjzu5g.jpg"
             alt="Solar and wind energy"
             className="w-full h-full object-cover opacity-50 transition-transform duration-10000"
           />
@@ -468,7 +468,7 @@ function BusinessPlan() {
                   powered by sustainable energy production.
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-green-600 font-bold">12-15% ROI</span>
+                  <span className="text-green-600 font-bold"></span>
                   <Link
                     to="/services"
                     className="text-green-500 hover:text-green-700 font-medium group flex items-center"
@@ -490,7 +490,7 @@ function BusinessPlan() {
             >
               <div className="h-48 overflow-hidden ">
                 <img
-                  src="https://crownbankers.com/assets/img/plan/car.png"
+                  src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742970494/car_fwgels.png"
                   alt="Electric Vehicle"
                   className={`w-full h-full object-cover transition-transform duration-700 ${
                     hoveredCard === "ev" ? "scale-110" : "scale-100"
@@ -506,7 +506,7 @@ function BusinessPlan() {
                   manufacturers and infrastructure.
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-green-600 font-bold">18-22% ROI</span>
+                  <span className="text-green-600 font-bold"></span>
                   <Link
                     to="/services"
                     className="text-green-500 hover:text-green-700 font-medium group flex items-center"
@@ -544,7 +544,7 @@ function BusinessPlan() {
                   expert financial advisors.
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-green-600 font-bold">20-25% ROI</span>
+                  <span className="text-green-600 font-bold"></span>
                   <Link
                     to="/services"
                     className="text-green-500 hover:text-green-700 font-medium group flex items-center"
@@ -582,7 +582,7 @@ function BusinessPlan() {
                   leading Fortune 500 companies.
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-green-600 font-bold">10-14% ROI</span>
+                  <span className="text-green-600 font-bold"></span>
                   <Link
                     to="/services"
                     className="text-green-500 hover:text-green-700 font-medium group flex items-center"
@@ -779,7 +779,7 @@ function BusinessPlan() {
               </div>
 
               <h2 className="text-4xl md:text-6xl font-bold leading-tight ev-animate text-white">
-                Charge up your portfolio: How our platform van plug you into the
+                Charge up your portfolio: How our platform can plug you into the
                 Electrifying EV Revolution
               </h2>
 
@@ -859,7 +859,7 @@ function BusinessPlan() {
                 </div>
 
                 <h2 className="text-4xl md:text-6xl font-bold leading-tight text-white">
-                  Income Stream
+                  Income Streams
                 </h2>
 
                 <p className="text-lg mt-8 text-white/90 leading-relaxed">
@@ -1088,10 +1088,15 @@ function BusinessPlan() {
           </div>
         </div>
       </section>
-      <section className="py-12 sm:py-16 lg:py-20 ">
+      <section
+        className="py-12 sm:py-16 lg:py-20 "
+        // style={{
+        //   background: `url('https://res.cloudinary.com/dygdftjr8/image/upload/v1742807676/4_tbowdb.jpg') no-repeat center center/cover`,
+        // }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:mx-24">
           <img
-            src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742810209/cards_hj8jca.png"
+            src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742970830/CASH_gd25ob.png"
             alt="Crown Bankers"
             className="w-full h-auto object-contain"
           />
@@ -1337,7 +1342,7 @@ function BusinessPlan() {
                 </div>
               </div>
               <h3 className="text-center text-xl font-semibold mb-2 text-gray-800">
-                Referral and binary earnings will be credited instantly.
+                Referral earnings will be credited instantly.
               </h3>
             </div>
 

@@ -701,26 +701,59 @@ const Services = () => {
                 </h2>
                 <div className="space-y-6">
                   <p className="binary-text text-gray-700 text-lg leading-relaxed">
-                    Binary Bonus at Crown bankers: The Binary Bonus at our
-                    company a rewarding incentive designed for members who bring
-                    new investors into our dynamic investment ecosystem. This
-                    bonus operates on a binary structure, where each member
-                    possesses a left and a right leg.
+                    Binary Bonus at Crown bankers: The Binary Bonus at Crown
+                    Bankers is a rewarding incentive designed for members who
+                    introduce new investors to our investment ecosystem. This
+                    bonus follows a binary structure, where each member has two
+                    positions—one on the left and one on the right. Earnings are
+                    calculated based on the lesser leg's total investment. .
                   </p>
-                  <p className="binary-text text-gray-700 text-lg leading-relaxed">
-                    Let's say an investor on the left side contributes $15,000,
-                    and another on the right side invests $20,000. The binary
-                    bonus is calculated based on the lesser leg volume, which is
-                    $15,000 in this case. Assuming a 10% binary bonus rate, the
-                    bonus earned would be $1,500.
-                  </p>
+                  {/* <li className="relative pl-5"> */}
+                    {/* <span className="absolute left-0 text-green-500"></span> */}
+                    {/* For example, in the image: */}
+                    <ul className="list-none pl-5 mt-1">
+                      <li className="relative pl-5">
+                        <span className="absolute left-0 text-green-500">
+                          •
+                        </span>
+                        The left business volume is $2,800.
+                      </li>
+                      <li className="relative pl-5">
+                        <span className="absolute left-0 text-green-500">
+                          •
+                        </span>
+                        The right business volume is $4,650.
+                      </li>
+                      <li className="relative pl-5">
+                        <span className="absolute left-0 text-green-500">
+                          •
+                        </span>
+                        The binary bonus is calculated based on the lesser leg
+                        volume, which is $2,800.
+                      </li>
+                      <li className="relative pl-5">
+                        <span className="absolute left-0 text-green-500">
+                          •
+                        </span>
+                        Assuming a 10% binary bonus rate, the bonus earned would
+                        be $280.
+                      </li>
+                      <li className="relative pl-5">
+                        <span className="absolute left-0 text-green-500">
+                          •
+                        </span>
+                        This structure allows members to maximize their earnings
+                        by strategically growing both sides of their network.
+                      </li>
+                    </ul>
+                  {/* </li> */}
                 </div>
               </div>
 
               <div className="binary-image relative flex justify-center transform transition-all duration-500">
                 <div className="relative z-10 bg-gradient-to-br from-white/80 to-gray-100/90 rounded-2xl p-6 shadow-2xl backdrop-blur-sm">
                   <img
-                    src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742803595/binary_tfy789.png"
+                    src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742973175/2_14_tim2ok.png"
                     width={450}
                     height={450}
                     alt="Binary bonus illustration"
@@ -861,10 +894,10 @@ const Services = () => {
                   <div>
                     <p className="text-[#4CAF50] text-sm">Phone</p>
                     <a
-                      href="tel:+44745223745"
+                      href="tel:+44 7452237405"
                       className="text-[#4CAF50] hover:text-green-200 transition-colors duration-300"
                     >
-                      +44 745223745
+                      +44 7452237405
                     </a>
                   </div>
                 </div>

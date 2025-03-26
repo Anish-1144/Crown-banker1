@@ -10,9 +10,14 @@ const CryptoCard = () => {
             Investment Packages and Return
           </h1>
           <p className="text-gray-800 text-base sm:text-lg lg:text-xl leading-relaxed">
-            Unlock the power of your crypto assets with Crown Bankers Crypto
-            Card. Choose our Investment Plan for seamless services for the
-            ultimate crypto experience, anytime, anywhere.
+            {/* Unlock the potential of renewable energy with Crown Bankers. Choose
+            from our tailored investment plans designed to generate sustainable
+            energy yields while maximizing your growth. Join us in building a
+            future powered by clean energy. */}
+            Unlock the power of renewable energy with Crown Bankers. Explore our
+            tailored investment plans designed to deliver sustainable energy
+            returns while maximizing your financial growth. Invest in a cleaner,
+            greener future with us today.
           </p>
         </div>
 

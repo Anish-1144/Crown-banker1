@@ -67,8 +67,11 @@ function Nevbar() {
           <Phone className="text-green-500" />
 
           <div className="text-right">
-            <Link to="tel:55654541" className="text-xl font-bold text-gray-800">
-              55 654 541 17
+            <Link
+              to="tel:+44 7452237405"
+              className="text-xl font-bold text-gray-800"
+            >
+              +44 7452237405
             </Link>
           </div>
 
