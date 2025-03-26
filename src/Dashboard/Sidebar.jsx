@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Menu,
@@ -12,16 +11,8 @@ import {
   HelpCircle,
 } from "lucide-react";
 
-export default function Sidebar({ isDarkMode, isMobile, closeSidebar }) {
-  const [isOpen, setIsOpen] = useState(true);
+export default function Sidebar({ isDarkMode, isSidebarOpen, toggleSidebar }) {
   const location = useLocation();
-
-  // Close sidebar on mobile when route changes
-  useEffect(() => {
-    if (isMobile) {
-      closeSidebar();
-    }
-  }, [location, isMobile, closeSidebar]);
 
   const menuItems = [
     { path: "/dashboard", name: "Dashboard", icon: LayoutDashboard },
@@ -41,8 +32,8 @@ export default function Sidebar({ isDarkMode, isMobile, closeSidebar }) {
       className={`${
         isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
       } h-screen flex flex-col transition-all duration-300 ${
-        isOpen ? "w-64" : "w-20"
-      } lg:shadow-none shadow-xl`}
+        isSidebarOpen ? "w-64" : "w-20"
+      } shadow-xl md:shadow-none`}
     >
       {/* Logo Section with Menu Toggle */}
       <div className="flex items-center justify-between p-4 border-b border-gray-700">
@@ -53,23 +44,24 @@ export default function Sidebar({ isDarkMode, isMobile, closeSidebar }) {
             <img
               src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742818322/logo1_mp91bc.png"
               alt="logo1"
-             
             />
           </div>
-          {isOpen && (
+          {isSidebarOpen && (
             <div>
               <h1 className="text-lg font-bold">Crown Banker</h1>
               <p className="text-xs text-gray-400">Investment Platform</p>
             </div>
           )}
         </Link>
+        {/* Toggle Button */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`hidden lg:flex p-2 rounded-lg ${
+          onClick={toggleSidebar}
+          className={`p-2 rounded-lg ${
             isDarkMode ? "hover:bg-gray-700" : "hover:bg-gray-100"
           }`}
+          aria-label="Toggle sidebar"
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -82,7 +74,7 @@ export default function Sidebar({ isDarkMode, isMobile, closeSidebar }) {
             <Link
               key={item.path}
               to={item.path}
-              onClick={() => isMobile && closeSidebar()}
+              onClick={() => window.innerWidth < 768 && toggleSidebar()} // Close on mobile after click
               className={`flex items-center px-6 py-3 transition-colors ${
                 isActive
                   ? isDarkMode
@@ -94,7 +86,7 @@ export default function Sidebar({ isDarkMode, isMobile, closeSidebar }) {
               }`}
             >
               <Icon size={20} className={isActive ? "text-green-500" : ""} />
-              {isOpen && <span className="ml-4">{item.name}</span>}
+              {isSidebarOpen && <span className="ml-4">{item.name}</span>}
             </Link>
           );
         })}
@@ -109,7 +101,7 @@ export default function Sidebar({ isDarkMode, isMobile, closeSidebar }) {
             <Link
               key={item.path}
               to={item.path}
-              onClick={() => isMobile && closeSidebar()}
+              onClick={() => window.innerWidth < 768 && toggleSidebar()} // Close on mobile after click
               className={`flex items-center px-6 py-3 transition-colors ${
                 isActive
                   ? isDarkMode
@@ -121,7 +113,7 @@ export default function Sidebar({ isDarkMode, isMobile, closeSidebar }) {
               }`}
             >
               <Icon size={20} className={isActive ? "text-green-500" : ""} />
-              {isOpen && <span className="ml-4">{item.name}</span>}
+              {isSidebarOpen && <span className="ml-4">{item.name}</span>}
             </Link>
           );
         })}

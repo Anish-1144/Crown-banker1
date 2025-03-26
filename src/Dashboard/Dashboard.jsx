@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { IoWalletOutline } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
-
+import { useEffect } from "react";
 export default function Dashboard({ isDarkMode }) {
   const [isWithdrawModalOpen, setIsWithdrawModalOpen] = useState(false);
-  const navigate = useNavigate(); // Hook for navigation
-
+  const navigate = useNavigate();
   const userInfo = {
     userId: "CROWN-108470",
     name: "anish",
@@ -18,13 +17,19 @@ export default function Dashboard({ isDarkMode }) {
     status: "Active",
   };
 
+  useEffect(() => {
+    console.log(isDarkMode);
+  }, [isDarkMode]);
+  
+
+ 
   const wallets = [
-    { name: "ROI Wallet", amount: "$0.00", color: "emerald" },
-    { name: "R&B Wallet", amount: "$0.00", color: "emerald" },
-    { name: "Extra income wallet", amount: "$0.00", color: "emerald" },
-    { name: "Coupons", amount: "$0.00", color: "emerald" },
-    { name: "Total Investment", amount: "$0.00", color: "emerald" },
-    { name: "Total Withdrawal", amount: "$0.00", color: "emerald" },
+    { name: "ROI Wallet", amount: "$0.00", color: "green" },
+    { name: "R&B Wallet", amount: "$0.00", color: "green" },
+    { name: "Extra income wallet", amount: "$0.00", color: "green" },
+    { name: "Coupons", amount: "$0.00", color: "green" },
+    { name: "Total Investment", amount: "$0.00", color: "green" },
+    { name: "Total Withdrawal", amount: "$0.00", color: "green" },
   ];
 
   const handleWithdrawClick = () => {
@@ -36,27 +41,27 @@ export default function Dashboard({ isDarkMode }) {
   };
 
   const handleReinvestClick = () => {
-    navigate("/dashboard/vouchers"); // Navigate to /dashboard/vouchers
+    navigate("/dashboard/vouchers");
   };
 
   return (
-    <div className={`p-6 min-h-screen `}>
+    <div className={`p-6 ${isDarkMode ? "text-white" : "text-gray-800"}`}>
       <div className="max-w-7xl mx-auto space-y-6">
         {/* User Info and Wallets Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* User Info Card */}
           <div
-            className={`rounded-2xl p-6 backdrop-blur-sm border ${
+            className={`rounded-2xl p-6 border ${
               isDarkMode
-                ? "bg-gray-100 border-gray-700 text-white shadow-lg" // Dark theme classes
-                : "bg-gray-900 border-gray-200 text-black shadow-lg" // Light theme classes
-            }`}
+                ? "bg-white border-gray-700/50 shadow-lg shadow-gray-900/50"
+                : "bg-gray-800 border-gray-200 shadow-lg"
+            }`} // Dark: bg-gray-800/50, Light: bg-white
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
                 <p
                   className={`text-sm ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   User ID
@@ -66,7 +71,7 @@ export default function Dashboard({ isDarkMode }) {
               <div className="space-y-1">
                 <p
                   className={`text-sm ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Name
@@ -76,19 +81,19 @@ export default function Dashboard({ isDarkMode }) {
               <div className="space-y-1">
                 <p
                   className={`text-sm ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Your Balance
                 </p>
-                <p className="font-medium text-emerald-400">
+                <p className="font-medium text-green-400">
                   ${userInfo.balance}
                 </p>
               </div>
               <div className="space-y-1">
                 <p
                   className={`text-sm ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Sponsor Name
@@ -98,7 +103,7 @@ export default function Dashboard({ isDarkMode }) {
               <div className="col-span-2 space-y-1">
                 <p
                   className={`text-sm ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Sponsor Email
@@ -108,7 +113,7 @@ export default function Dashboard({ isDarkMode }) {
               <div className="space-y-1">
                 <p
                   className={`text-sm ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Currency
@@ -118,14 +123,12 @@ export default function Dashboard({ isDarkMode }) {
               <div className="space-y-1">
                 <p
                   className={`text-sm ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Status
                 </p>
-                <p className="font-medium text-emerald-400">
-                  {userInfo.status}
-                </p>
+                <p className="font-medium text-green-400">{userInfo.status}</p>
               </div>
             </div>
           </div>
@@ -135,13 +138,13 @@ export default function Dashboard({ isDarkMode }) {
             {wallets.map((wallet, index) => (
               <div
                 key={index}
-                className={`rounded-2xl p-4 backdrop-blur-sm border ${
+                className={`rounded-2xl p-4 border ${
                   isDarkMode
-                    ? "bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10"
-                    : "bg-white border-gray-200/50 shadow-lg "
-                }`}
+                    ? "bg-gray-800/50 border-gray-700/50 shadow-lg shadow-gray-900/50"
+                    : "bg-white border-gray-200 shadow-lg"
+                }`} // Dark: bg-gray-800/50, Light: bg-white
               >
-                <div className="flex items-center gap-2 text-emerald-400 mb-2">
+                <div className="flex items-center gap-2 text-green-400 mb-2">
                   <IoWalletOutline className="text-xl" />
                   <span className="text-sm font-medium">{wallet.name}</span>
                 </div>
@@ -155,18 +158,18 @@ export default function Dashboard({ isDarkMode }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Wallet Update Card */}
           <div
-            className={`rounded-2xl p-6 backdrop-blur-sm border ${
+            className={`rounded-2xl p-6 border ${
               isDarkMode
-                ? "bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10"
-                : "bg-white border-gray-200/50 shadow-lg "
-            }`}
+                ? "bg-gray-800/50 border-gray-700/50 shadow-lg shadow-gray-900/50"
+                : "bg-white border-gray-200 shadow-lg"
+            }`} // Dark: bg-gray-800/50, Light: bg-white
           >
             <h3 className="text-lg font-semibold mb-4">
               Update Wallet Address
             </h3>
             <p
               className={`text-sm mb-4 ${
-                isDarkMode ? "text-gray-300" : "text-gray-500"
+                isDarkMode ? "text-gray-400" : "text-gray-500"
               }`}
             >
               Please enter your Withdrawal Wallet Address
@@ -176,13 +179,13 @@ export default function Dashboard({ isDarkMode }) {
               <input
                 type="text"
                 placeholder="Enter Wallet Address"
-                className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                className={`w-full p-3 rounded-xl border ${
                   isDarkMode
-                    ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white placeholder-gray-400"
-                    : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
-                } focus:ring-1 focus:ring-emerald-500 focus:outline-none`}
+                    ? "bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-green-400"
+                    : "bg-white border-gray-200 text-gray-800 placeholder-gray-400 focus:border-green-400"
+                } focus:ring-1 focus:ring-green-500 focus:outline-none`} // Dark: bg-gray-800/50, Light: bg-white
               />
-              <button className="w-full py-3 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white font-medium transition-colors backdrop-blur-sm">
+              <button className="w-full py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-medium transition-colors">
                 Continue
               </button>
               <p className="text-sm text-red-400">
@@ -195,22 +198,22 @@ export default function Dashboard({ isDarkMode }) {
 
           {/* Actions and Referral Card */}
           <div
-            className={`rounded-2xl p-6 backdrop-blur-sm border ${
+            className={`rounded-2xl p-6 border ${
               isDarkMode
-                ? "bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10"
-                : "bg-white border-gray-200/50 shadow-lg "
-            }`}
+                ? "bg-gray-800/50 border-gray-700/50 shadow-lg shadow-gray-900/50"
+                : "bg-white border-gray-200 shadow-lg"
+            }`} // Dark: bg-gray-800/50, Light: bg-white
           >
             <div className="flex justify-between items-center mb-6">
               <button
                 onClick={handleWithdrawClick}
-                className="px-6 py-3 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white font-medium transition-colors backdrop-blur-sm flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-medium transition-colors flex items-center gap-2"
               >
                 Withdraw <FiArrowRight />
               </button>
               <button
                 onClick={handleReinvestClick}
-                className="px-6 py-3 rounded-xl bg-emerald-600/90 hover:bg-emerald-700/90 text-white font-medium transition-colors backdrop-blur-sm flex items-center gap-2"
+                className="px-6 py-3 rounded-xl bg-green-600 hover:bg-green-700 text-white font-medium transition-colors flex items-center gap-2"
               >
                 Reinvest <FiArrowRight />
               </button>
@@ -223,7 +226,7 @@ export default function Dashboard({ isDarkMode }) {
                   <div>
                     <p
                       className={`text-sm mb-2 ${
-                        isDarkMode ? "text-gray-300" : "text-gray-500"
+                        isDarkMode ? "text-gray-400" : "text-gray-500"
                       }`}
                     >
                       Left link
@@ -233,13 +236,13 @@ export default function Dashboard({ isDarkMode }) {
                         type="text"
                         value="https://crownbankers.com/signup?sponsorId=CROWN-10847&position=left"
                         readOnly
-                        className={`flex-1 p-3 rounded-xl border backdrop-blur-sm ${
+                        className={`flex-1 p-3 rounded-xl border ${
                           isDarkMode
-                            ? "bg-gray-700/30 border-gray-600 text-white"
-                            : "bg-gray-50/30 border-gray-200"
-                        }`}
+                            ? "bg-gray-800/50 border-gray-700 text-white"
+                            : "bg-white border-gray-200 text-gray-800"
+                        }`} // Dark: bg-gray-800/50, Light: bg-white
                       />
-                      <button className="px-4 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white transition-colors backdrop-blur-sm">
+                      <button className="px-4 rounded-xl bg-green-500 hover:bg-green-600 text-white transition-colors">
                         Copy link
                       </button>
                     </div>
@@ -247,7 +250,7 @@ export default function Dashboard({ isDarkMode }) {
                   <div>
                     <p
                       className={`text-sm mb-2 ${
-                        isDarkMode ? "text-gray-300" : "text-gray-500"
+                        isDarkMode ? "text-gray-400" : "text-gray-500"
                       }`}
                     >
                       Right link
@@ -257,13 +260,13 @@ export default function Dashboard({ isDarkMode }) {
                         type="text"
                         value="https://crownbankers.com/signup?sponsorId=CROWN-10847&position=right"
                         readOnly
-                        className={`flex-1 p-3 rounded-xl border backdrop-blur-sm ${
+                        className={`flex-1 p-3 rounded-xl border ${
                           isDarkMode
-                            ? "bg-gray-700/30 border-gray-600 text-white"
-                            : "bg-gray-50/30 border-gray-200"
-                        }`}
+                            ? "bg-gray-800/50 border-gray-700 text-white"
+                            : "bg-white border-gray-200 text-gray-800"
+                        }`} // Dark: bg-gray-800/50, Light: bg-white
                       />
-                      <button className="px-4 rounded-xl bg-emerald-500/90 hover:bg-emerald-600/90 text-white transition-colors backdrop-blur-sm">
+                      <button className="px-4 rounded-xl bg-green-500 hover:bg-green-600 text-white transition-colors">
                         Copy link
                       </button>
                     </div>
@@ -272,23 +275,25 @@ export default function Dashboard({ isDarkMode }) {
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4 bg-gray-800/30 border-gray-700/50 shadow-lg shadow-emerald-900/10 rounded-lg p-4">
-                  My Career : Level 0 -{" "}
-                  <span className={isDarkMode ? "text-gray-300" : "text-gray-"}>
+                <h3 className="text-lg font-semibold mb-4">
+                  My Career: Level 0 -{" "}
+                  <span
+                    className={isDarkMode ? "text-gray-400" : "text-gray-500"}
+                  >
                     Next Level: 1 - Bronze
                   </span>
                 </h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <span className="text-emerald-400">●</span>
+                      <span className="text-green-400">●</span>
                       <span>Left Business</span>
                     </div>
                     <div className="flex items-center gap-4">
                       <span>$0.00</span>
                       <span
                         className={
-                          isDarkMode ? "text-gray-300" : "text-gray-500"
+                          isDarkMode ? "text-gray-400" : "text-gray-500"
                         }
                       >
                         Target: $10000.00
@@ -297,14 +302,14 @@ export default function Dashboard({ isDarkMode }) {
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <span className="text-emerald-400">●</span>
+                      <span className="text-green-400">●</span>
                       <span>Right Business</span>
                     </div>
                     <div className="flex items-center gap-4">
                       <span>$0.00</span>
                       <span
                         className={
-                          isDarkMode ? "text-gray-300" : "text-gray-500"
+                          isDarkMode ? "text-gray-400" : "text-gray-500"
                         }
                       >
                         Target: $10000.00
@@ -320,23 +325,23 @@ export default function Dashboard({ isDarkMode }) {
 
       {/* Withdraw Modal */}
       {isWithdrawModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
           <div
             className={`rounded-2xl p-6 w-full max-w-md border ${
               isDarkMode
-                ? "bg-gray-800/90 border-gray-700/50 shadow-lg shadow-emerald-900/10"
-                : "bg-white border-gray-200/50 shadow-lg"
-            }`}
+                ? "bg-gray-800/90 border-gray-700/50 shadow-lg shadow-gray-900/50"
+                : "bg-white border-gray-200 shadow-lg"
+            }`} // Dark: bg-gray-800/90, Light: bg-white
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold">Withdraw Fund</h3>
               <button onClick={handleCloseModal}>
-                <IoClose className="text-2xl" />
+                <IoClose className="text-2xl text-gray-400 hover:text-gray-200" />
               </button>
             </div>
             <p
               className={`text-sm mb-4 ${
-                isDarkMode ? "text-gray-300" : "text-gray-500"
+                isDarkMode ? "text-gray-400" : "text-gray-500"
               }`}
             >
               Enter the amount you wish to withdraw from your account. Please
@@ -348,17 +353,17 @@ export default function Dashboard({ isDarkMode }) {
               <div>
                 <label
                   className={`block text-sm font-medium mb-1 ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Select Wallet
                 </label>
                 <select
-                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                  className={`w-full p-3 rounded-xl border ${
                     isDarkMode
-                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white"
-                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
-                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none appearance-none`}
+                      ? "bg-gray-800/50 border-gray-700 text-white focus:border-green-400"
+                      : "bg-white border-gray-200 text-gray-800 focus:border-green-400"
+                  } focus:ring-1 focus:ring-green-500 focus:outline-none appearance-none`} // Dark: bg-gray-800/50, Light: bg-white
                 >
                   <option>ROI Wallet</option>
                   <option>R&B Wallet</option>
@@ -370,17 +375,17 @@ export default function Dashboard({ isDarkMode }) {
               <div>
                 <label
                   className={`block text-sm font-medium mb-1 ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Withdrawal Method
                 </label>
                 <select
-                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                  className={`w-full p-3 rounded-xl border ${
                     isDarkMode
-                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white"
-                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
-                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none appearance-none`}
+                      ? "bg-gray-800/50 border-gray-700 text-white focus:border-green-400"
+                      : "bg-white border-gray-200 text-gray-800 focus:border-green-400"
+                  } focus:ring-1 focus:ring-green-500 focus:outline-none appearance-none`} // Dark: bg-gray-800/50, Light: bg-white
                 >
                   <option>Virtual Card</option>
                   <option>Bank Transfer</option>
@@ -392,7 +397,7 @@ export default function Dashboard({ isDarkMode }) {
               <div>
                 <label
                   className={`block text-sm font-medium mb-1 ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Enter Amount
@@ -400,11 +405,11 @@ export default function Dashboard({ isDarkMode }) {
                 <input
                   type="number"
                   placeholder="0"
-                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                  className={`w-full p-3 rounded-xl border ${
                     isDarkMode
-                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white placeholder-gray-400"
-                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
-                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none`}
+                      ? "bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-green-400"
+                      : "bg-white border-gray-200 text-gray-800 placeholder-gray-400 focus:border-green-400"
+                  } focus:ring-1 focus:ring-green-500 focus:outline-none`} // Dark: bg-gray-800/50, Light: bg-white
                 />
               </div>
 
@@ -412,7 +417,7 @@ export default function Dashboard({ isDarkMode }) {
               <div>
                 <label
                   className={`block text-sm font-medium mb-1 ${
-                    isDarkMode ? "text-gray-300" : "text-gray-500"
+                    isDarkMode ? "text-gray-400" : "text-gray-500"
                   }`}
                 >
                   Enter Your Security Pin
@@ -420,16 +425,16 @@ export default function Dashboard({ isDarkMode }) {
                 <input
                   type="password"
                   placeholder="Enter Security Pin"
-                  className={`w-full p-3 rounded-xl border backdrop-blur-sm ${
+                  className={`w-full p-3 rounded-xl border ${
                     isDarkMode
-                      ? "bg-gray-700/30 border-gray-600 focus:border-emerald-400 text-white placeholder-gray-400"
-                      : "bg-gray-50/30 border-gray-200 focus:border-emerald-500"
-                  } focus:ring-1 focus:ring-emerald-500 focus:outline-none`}
+                      ? "bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-green-400"
+                      : "bg-white border-gray-200 text-gray-800 placeholder-gray-400 focus:border-green-400"
+                  } focus:ring-1 focus:ring-green-500 focus:outline-none`} // Dark: bg-gray-800/50, Light: bg-white
                 />
               </div>
 
               {/* Submit Button */}
-              <button className="w-full py-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors backdrop-blur-sm">
+              <button className="w-full py-3 rounded-xl bg-green-500 hover:bg-green-600 text-white font-medium transition-colors">
                 Submit
               </button>
             </div>

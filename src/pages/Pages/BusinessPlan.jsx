@@ -1096,7 +1096,7 @@ function BusinessPlan() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:mx-24">
           <img
-            src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742970830/CASH_gd25ob.png"
+            src="https://res.cloudinary.com/dygdftjr8/image/upload/v1742979263/cards_mbfp31.png"
             alt="Crown Bankers"
             className="w-full h-auto object-contain"
           />
