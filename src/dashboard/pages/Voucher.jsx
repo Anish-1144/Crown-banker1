@@ -54,9 +54,7 @@ const Voucher = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
-       
-      </div>
+      <div className="flex justify-between items-center"></div>
 
       {/* Voucher tabs */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow">
@@ -199,12 +197,12 @@ const Voucher = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                      Discount Type
+                      Select Wallet
                     </label>
                     <select className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
-                      <option>Percentage Discount</option>
-                      <option>Fixed Amount Discount</option>
-                      <option>Free Shipping</option>
+                      <option>ROI Wallet</option>
+                      <option>Extra Income Wallet</option>
+                      <option>R&B Wallet </option>
                     </select>
                   </div>
 
