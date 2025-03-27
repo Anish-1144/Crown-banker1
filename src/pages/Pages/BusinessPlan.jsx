@@ -711,7 +711,7 @@ function BusinessPlan() {
 
               <div className="relative w-full h-72">
                 <img
-                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1000"
+                  src="https://i.pinimg.com/736x/b5/99/5a/b5995ac6f2359cfc8655fc69bf26eaa9.jpg"
                   alt="Solar panels at sunset"
                   className="w-full h-full object-cover rounded-md"
                 />

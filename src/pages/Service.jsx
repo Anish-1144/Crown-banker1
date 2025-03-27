@@ -709,43 +709,33 @@ const Services = () => {
                     calculated based on the lesser leg's total investment. .
                   </p>
                   {/* <li className="relative pl-5"> */}
-                    {/* <span className="absolute left-0 text-green-500"></span> */}
-                    {/* For example, in the image: */}
-                    <ul className="list-none pl-5 mt-1">
-                      <li className="relative pl-5">
-                        <span className="absolute left-0 text-green-500">
-                          •
-                        </span>
-                        The left business volume is $2,800.
-                      </li>
-                      <li className="relative pl-5">
-                        <span className="absolute left-0 text-green-500">
-                          •
-                        </span>
-                        The right business volume is $4,650.
-                      </li>
-                      <li className="relative pl-5">
-                        <span className="absolute left-0 text-green-500">
-                          •
-                        </span>
-                        The binary bonus is calculated based on the lesser leg
-                        volume, which is $2,800.
-                      </li>
-                      <li className="relative pl-5">
-                        <span className="absolute left-0 text-green-500">
-                          •
-                        </span>
-                        Assuming a 10% binary bonus rate, the bonus earned would
-                        be $280.
-                      </li>
-                      <li className="relative pl-5">
-                        <span className="absolute left-0 text-green-500">
-                          •
-                        </span>
-                        This structure allows members to maximize their earnings
-                        by strategically growing both sides of their network.
-                      </li>
-                    </ul>
+                  {/* <span className="absolute left-0 text-green-500"></span> */}
+                  {/* For example, in the image: */}
+                  <ul className="list-none pl-5 mt-1 ">
+                    <li className="relative pl-5 text-black">
+                      <span className="absolute left-0">•</span>
+                      The left business volume is $2,800.
+                    </li>
+                    <li className="relative pl-5 text-black">
+                      <span className="absolute left-0 text-green-500">•</span>
+                      The right business volume is $4,650.
+                    </li>
+                    <li className="relative pl-5 text-black">
+                      <span className="absolute left-0 text-green-500">•</span>
+                      The binary bonus is calculated based on the lesser leg
+                      volume, which is $2,800.
+                    </li>
+                    <li className="relative pl-5 text-black">
+                      <span className="absolute left-0 text-green-500">•</span>
+                      Assuming a 10% binary bonus rate, the bonus earned would
+                      be $280.
+                    </li>
+                    <li className="relative pl-5 text-black ">
+                      <span className="absolute left-0 text-green-500">•</span>
+                      This structure allows members to maximize their earnings
+                      by strategically growing both sides of their network.
+                    </li>
+                  </ul>
                   {/* </li> */}
                 </div>
               </div>
