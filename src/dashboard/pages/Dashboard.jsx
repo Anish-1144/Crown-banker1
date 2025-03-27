@@ -77,109 +77,6 @@ const Dashboard = () => {
           icon={<TrendingUp className="text-green-500" />}
         />
       </div>
-
-      {/* Referral Links Card */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <div className="flex items-center mb-4">
-          <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-3">
-            <Link className="text-green-500" />
-          </div>
-          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-            Referral Links
-          </h3>
-        </div>
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Left Link
-              </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300 break-all border border-gray-200 dark:border-gray-700 rounded-xl p-4">
-                {userData.referralLinks.left}
-              </p>
-            </div>
-            <button
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-md text-sm"
-              onClick={() =>
-                navigator.clipboard.writeText(userData.referralLinks.left)
-              }
-            >
-              Copy
-            </button>
-          </div>
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Right Link
-              </p>
-              <p className="text-sm text-gray-700 dark:text-gray-300 break-all border border-gray-200 dark:border-gray-700 rounded-xl p-4">
-                {userData.referralLinks.right}
-              </p>
-            </div>
-            <button
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded-md text-sm"
-              onClick={() =>
-                navigator.clipboard.writeText(userData.referralLinks.right)
-              }
-            >
-              Copy
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Career Progress Card */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-        <div className="flex items-center mb-4">
-          <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-3">
-            <Award className="text-green-500" />
-          </div>
-          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-            Career Progress
-          </h3>
-        </div>
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Current Level
-              </p>
-              <p className="text-lg font-semibold">
-                {userData.career.currentLevel}
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Next Level
-              </p>
-              <p className="text-lg font-semibold">
-                {userData.career.nextLevel}
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Left Business
-              </p>
-              <p className="text-lg font-semibold">
-                {userData.career.leftBusiness.current} /{" "}
-                {userData.career.leftBusiness.target}
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Right Business
-              </p>
-              <p className="text-lg font-semibold">
-                {userData.career.rightBusiness.current} /{" "}
-                {userData.career.rightBusiness.target}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Wallets section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg shadow p-6">
@@ -267,6 +164,113 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+      {/* Referral Links and Career Progress in one row */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+          <div className="flex items-center mb-4">
+            <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-3">
+              <Award className="text-green-500" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+              Career Progress
+            </h3>
+          </div>
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Current Level
+                </p>
+                <p className="text-lg font-semibold">
+                  {userData.career.currentLevel}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Next Level
+                </p>
+                <p className="text-lg font-semibold">
+                  {userData.career.nextLevel}
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Left Business
+                </p>
+                <p className="text-lg font-semibold">
+                  {userData.career.leftBusiness.current} /{" "}
+                  {userData.career.leftBusiness.target}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Right Business
+                </p>
+                <p className="text-lg font-semibold">
+                  {userData.career.rightBusiness.current} /{" "}
+                  {userData.career.rightBusiness.target}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Referral Links Card */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+          <div className="flex items-center mb-4">
+            <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center mr-3">
+              <Link className="text-green-500" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+              Referral Links
+            </h3>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Left Link
+                </p>
+                <p className="text-sm text-gray-700 dark:text-gray-300 break-all border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                  {userData.referralLinks.left}
+                </p>
+              </div>
+              <button
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 ml-4 rounded-md text-sm h-10 w-20"
+                onClick={() =>
+                  navigator.clipboard.writeText(userData.referralLinks.left)
+                }
+              >
+                Copy
+              </button>
+            </div>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Right Link
+                </p>
+                <p className="text-sm text-gray-700 dark:text-gray-300 break-all border border-gray-200 dark:border-gray-700 rounded-xl p-4">
+                  {userData.referralLinks.right}
+                </p>
+              </div>
+              <button
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 ml-2 rounded-md text-sm h-10 w-20"
+                onClick={() =>
+                  navigator.clipboard.writeText(userData.referralLinks.right)
+                }
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Career Progress Card */}
+      </div>
+
+      {/* Wallets section */}
 
       {/* Withdraw Popup */}
       {isWithdrawOpen && (
