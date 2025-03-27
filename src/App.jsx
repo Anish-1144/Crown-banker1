@@ -20,7 +20,7 @@ import Fqa from "./pages/Fqa";
 import Smoothscrolls from "./components/Smoothscrolls";
 
 // Dashboard Imports
-import Layout from "./dashboard/components/layout";
+import Layout from "./dashboard/components/Layout";
 import Dashboard from "./dashboard/pages/dashboard";
 import Investment from "./dashboard/pages/Investment";
 import Vouchers from "./dashboard/pages/Voucher";
