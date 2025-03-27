@@ -44,7 +44,7 @@ function Nevbar() {
   return (
     <header className="w-full ">
       {/* Top bar with contact info */}
-      <div className="hidden md:flex items-center justify-between bg-white py-2  md:px-24 border-b">
+      <div className="hidden md:flex items-center justify-between bg-white py-2  md:px-24 border-b border-2 border-gray-300">
         <div className="flex items-center space-x-6 text-sm text-gray-600">
           <div className="flex items-center gap-2">
             <Mail className="h-4 w-4" />

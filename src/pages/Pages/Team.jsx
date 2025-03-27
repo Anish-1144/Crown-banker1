@@ -118,7 +118,7 @@ const Team = () => {
               ref={ceoInfoRef}
               className="md:w-2/3 md:pl-8 text-center md:text-left"
             >
-              <h3 className="text-3xl sm:text-4xl font-bold text-black-50 mb-4">
+              <h3 className="text-3xl sm:text-4xl font-bold text-black mb-4">
                 Adrian Cadiz
               </h3>
               <h4 className="text-xl font-semibold text-gray-800 mb-4">

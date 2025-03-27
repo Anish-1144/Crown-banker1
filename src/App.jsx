@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-// imporfrom "./component; // Correct import
+import { Routes, Route, useLocation } from "react-router-dom";
+
+// Main Site Imports
 import Home from "./pages/Home";
 import Services from "./pages/Service";
-import Contect from "./pages/Contect"; // Fixed typo from Contect
+import Contact from "./pages/Contect"; // Fixed typo from previous 'Contect'
 import NotFound from "./pages/NotFound";
 import PagesLayout from "./pages/Pages/PagesLayout";
 import Team from "./pages/Pages/Team";
@@ -17,26 +18,53 @@ import Privacy from "./pages/Privacy";
 import Term from "./pages/Term";
 import Fqa from "./pages/Fqa";
 import Smoothscrolls from "./components/Smoothscrolls";
-import Dashboard from "./Dashboard/Dashboard";
-import Genealogy from "./Dashboard/Genealogy";
-import Report from "./Dashboard/Report";
-import Vouchers from "./Dashboard/Vouchers";
-import Investment from "./Dashboard/Investment";
-import DashboardLayout from "./Dashboard/DashboardLayout";
-import MyProfile from "./Dashboard/MyProfile";
-import Support from "./Dashboard/Support";
-// import Sidebar from "./Dashboard/Sidebar";
+
+// Dashboard Imports
+import Layout from "./dashboard/components/layout";
+import Dashboard from "./dashboard/pages/dashboard";
+import Investment from "./dashboard/pages/Investment";
+import Vouchers from "./dashboard/pages/Voucher";
+import Genealogy from "./dashboard/pages/Genealogy";
+import Report from "./dashboard/pages/Report";
+import Support from "./dashboard/pages/Support";
+import MyProfile from "./dashboard/pages/MyProfile";
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
+  // Check if the current path is a dashboard route
+  const isDashboardRoute = location.pathname.startsWith("/dashboard");
+
+  // Render appropriate layout based on route
+  if (isDashboardRoute) {
+    return (
+      <Layout
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+        currentPath={location.pathname}
+      >
+        {/* <Smoothscrolls></Smoothscrolls> */}
+        <Routes>
+          <Route path="/dashboard" element={ <Dashboard />} />
+          <Route path="/dashboard/investment" element={<Investment />} />
+          <Route path="/dashboard/voucher" element={<Vouchers />} />
+          <Route path="/dashboard/genealogy" element={<Genealogy />} />
+          <Route path="/dashboard/report" element={<Report />} />
+          <Route path="/dashboard/support" element={<Support />} />
+          <Route path="/dashboard/myprofile" element={<MyProfile />} />
+        </Routes>
+      </Layout>
+    );
+  }
+
+  // Main site routes with smooth scrolling
   return (
     <Routes>
-      {/* Apply smooth scrolling to main site pages */}
       <Route
         path="/"
         element={
@@ -57,7 +85,7 @@ export default function App() {
         path="/contact"
         element={
           <Smoothscrolls>
-            <Contect />
+            <Contact />
           </Smoothscrolls>
         }
       />
@@ -99,7 +127,6 @@ export default function App() {
         <Route path="legal" element={<Legal />} />
       </Route>
 
-      {/* Reports Nested Routes */}
       <Route
         path="/reports"
         element={
@@ -111,29 +138,6 @@ export default function App() {
         <Route path="trade-report" element={<TradeReport />} />
         <Route path="solar-purchase-document" element={<SolarAgreement />} />
         <Route path="trade-view" element={<TradeView />} />
-      </Route>
-
-      {/* Dashboard Routes */}
-      <Route
-        path="/dashboard"
-        element={
-          <DashboardLayout isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-        }
-      >
-        <Route index element={<Dashboard isDarkMode={isDarkMode} />} />
-        <Route path="investment" element={<Investment />} />
-        <Route path="vouchers" element={<Vouchers />} />
-        <Route path="genealogy" element={<Genealogy />} />
-        <Route path="report" element={<Report />}>
-        <Route path="support" element={<div><Support/></div>} />
-
-          <Route
-            path="profile"
-            element={<Navigate to="/dashboard/profile" replace />}
-          />
-        </Route>
-        <Route path="profile" element={<MyProfile isDarkMode={isDarkMode} />} />
-        <Route path="support" element={<div><Support/></div>} />
       </Route>
 
       <Route

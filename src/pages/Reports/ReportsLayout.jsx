@@ -4,7 +4,7 @@ import Nevbar from "../../components/header/Nevbar";
 
 export default function ReportsLayout() {
   return (
-    <div>
+    <div className="">
       <Nevbar />
         <Outlet />
       <Footer />

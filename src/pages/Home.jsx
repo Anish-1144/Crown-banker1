@@ -157,7 +157,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-white">
       <Nevbar />
       <div ref={heroRef}>
         <Hero />
