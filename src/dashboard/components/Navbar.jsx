@@ -73,7 +73,7 @@ const Navbar = ({ pageTitle, toggleSidebar }) => {
             <h1 className="text-xl font-semibold text-gray-800 dark:text-white">
               {pageTitle}
             </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-gray-500 dark:text-gray-400 hidden md:block">
               Let's check your update today
             </p>
           </div>
