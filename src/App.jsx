@@ -21,7 +21,7 @@ import Smoothscrolls from "./components/Smoothscrolls";
 
 // Dashboard Imports
 import Layout from "./dashboard/components/Layout";
-import Dashboard from "./dashboard/pages/dashboard";
+import Dashboard from "./dashboard/pages/Dashboard";
 import Investment from "./dashboard/pages/Investment";
 import Vouchers from "./dashboard/pages/Voucher";
 import Genealogy from "./dashboard/pages/Genealogy";
