@@ -611,11 +611,11 @@ const Investment = () => {
                     className={`${crypto.color} rounded-xl p-4 cursor-pointer hover:opacity-90 transition-all max-w-xs`}
                   >
                     <div className="flex items-center">
-                      <div className="flex-shrink-0 bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-2">
+                      <div className="flex-shrink-0 bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-2">
                         <img
                           src={crypto.icon}
                           alt={crypto.name}
-                          className="w-10 h-10"
+                          className="w-6 h-6"
                         />
                       </div>
                       <div>
