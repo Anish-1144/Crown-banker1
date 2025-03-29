@@ -78,7 +78,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               alt=""
             />
             <span className="ml-2 text-xl font-bold text-gray-900 dark:text-white">
-              Crown-Banker.
+              Crown Bankers
             </span>
           </Link>
           <button

@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   const userData = {
     userId: "CROWN-108470",
-    name: "Anish",
+    name: "john doe",
     balance: "$0.00",
     sponsorEmail: "crownbankersofficial@gmail.com",
     currency: "US Dollar",
@@ -106,7 +106,7 @@ const Dashboard = () => {
             </div>
             <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Coupons
+                Voucher
               </p>
               <p className="text-lg font-semibold">
                 {userData.wallets.coupons}
@@ -306,7 +306,10 @@ const Dashboard = () => {
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   >
-                    <option value="virtual-card">Virtual Card</option>
+                    <option value="virtual-card"> Withdrawal Wallet</option>
+                    {/* <option value="virtual-card"></option>
+                    <option value="virtual-card"></option> */}
+
                     {/* Add more withdrawal methods as needed */}
                   </select>
                 </div>

@@ -48,183 +48,228 @@ const Report = () => {
     },
   ];
 
-  // Sample ROI data
+  // Updated ROI data with new field structure
   const roiData = [
     {
-      plan: "Basic Plan",
-      investment: "$1,000",
-      returns: "$1,150",
+      id: "INV001",
+      package: "Basic Plan",
+      investmentAmount: "$1,000",
+      date: "2023-01-15",
+      expiryDate: "2023-02-14",
       roi: "15%",
-      period: "30 days",
     },
     {
-      plan: "Standard Plan",
-      investment: "$5,000",
-      returns: "$6,000",
+      id: "INV002",
+      package: "Standard Plan",
+      investmentAmount: "$5,000",
+      date: "2023-02-01",
+      expiryDate: "2023-04-01",
       roi: "20%",
-      period: "60 days",
     },
     {
-      plan: "Premium Plan",
-      investment: "$10,000",
-      returns: "$13,000",
+      id: "INV003",
+      package: "Premium Plan",
+      investmentAmount: "$10,000",
+      date: "2023-03-10",
+      expiryDate: "2023-06-08",
       roi: "30%",
-      period: "90 days",
     },
     {
-      plan: "Elite Plan",
-      investment: "$25,000",
-      returns: "$35,000",
+      id: "INV004",
+      package: "Elite Plan",
+      investmentAmount: "$25,000",
+      date: "2023-04-05",
+      expiryDate: "2023-10-02",
       roi: "40%",
-      period: "180 days",
     },
     {
-      plan: "VIP Plan",
-      investment: "$50,000",
-      returns: "$75,000",
+      id: "INV005",
+      package: "VIP Plan",
+      investmentAmount: "$50,000",
+      date: "2023-05-20",
+      expiryDate: "2024-05-19",
       roi: "50%",
-      period: "365 days",
     },
   ];
 
-  // Sample BI data
+  // Updated BI data with new field structure
   const biData = [
     {
-      month: "January",
-      revenue: "$12,500",
-      expenses: "$8,200",
-      profit: "$4,300",
-      growth: "+5.2%",
+      siNumber: "BI001",
+      date: "2023-01-31",
+      amount: "$12,500",
+      percentage: "8.5%",
+      status: "Completed",
     },
     {
-      month: "February",
-      revenue: "$14,200",
-      expenses: "$9,100",
-      profit: "$5,100",
-      growth: "+18.6%",
+      siNumber: "BI002",
+      date: "2023-02-28",
+      amount: "$14,200",
+      percentage: "9.2%",
+      status: "Completed",
     },
     {
-      month: "March",
-      revenue: "$15,800",
-      expenses: "$9,500",
-      profit: "$6,300",
-      growth: "+23.5%",
+      siNumber: "BI003",
+      date: "2023-03-31",
+      amount: "$15,800",
+      percentage: "10.3%",
+      status: "Completed",
     },
     {
-      month: "April",
-      revenue: "$16,300",
-      expenses: "$10,200",
-      profit: "$6,100",
-      growth: "-3.2%",
+      siNumber: "BI004",
+      date: "2023-04-30",
+      amount: "$16,300",
+      percentage: "7.8%",
+      status: "Completed",
     },
     {
-      month: "May",
-      revenue: "$18,500",
-      expenses: "$11,300",
-      profit: "$7,200",
-      growth: "+18.0%",
+      siNumber: "BI005",
+      date: "2023-05-31",
+      amount: "$18,500",
+      percentage: "11.5%",
+      status: "Completed",
     },
   ];
 
-  // Sample RI data
+  // Updated RI data with new field structure
   const riData = [
     {
+      siNumber: "RI001",
       date: "2023-06-01",
-      source: "Direct Investment",
-      amount: "$2,500",
-      status: "Completed",
+      referralUser: "John Smith",
+      position: "Left",
+      package: "Premium Plan",
+      referralAmount: "$500",
     },
     {
+      siNumber: "RI002",
       date: "2023-05-15",
-      source: "Referral Bonus",
-      amount: "$350",
-      status: "Completed",
+      referralUser: "Mary Johnson",
+      position: "Right",
+      package: "Standard Plan",
+      referralAmount: "$250",
     },
     {
+      siNumber: "RI003",
       date: "2023-05-10",
-      source: "Profit Share",
-      amount: "$1,200",
-      status: "Completed",
+      referralUser: "Robert Davis",
+      position: "Left",
+      package: "Elite Plan",
+      referralAmount: "$750",
     },
     {
+      siNumber: "RI004",
       date: "2023-05-05",
-      source: "Staking Rewards",
-      amount: "$800",
-      status: "Completed",
+      referralUser: "Sarah Wilson",
+      position: "Right",
+      package: "Basic Plan",
+      referralAmount: "$100",
     },
     {
+      siNumber: "RI005",
       date: "2023-05-01",
-      source: "Affiliate Commission",
-      amount: "$450",
-      status: "Completed",
+      referralUser: "Michael Brown",
+      position: "Left",
+      package: "VIP Plan",
+      referralAmount: "$1,000",
     },
   ];
 
-  // Sample Extra Income data
+  // Updated Extra Income data with new field structure
   const extraIncomeData = [
     {
+      siNumber: "EI001",
+      achievement: "Team Sales Target",
+      rewardAmount: "$1,200",
       date: "2023-06-02",
-      source: "Referral Bonus",
-      amount: "$120",
-      level: "Level 1",
     },
     {
+      siNumber: "EI002",
+      achievement: "Leadership Bonus",
+      rewardAmount: "$750",
       date: "2023-05-28",
-      source: "Referral Bonus",
-      amount: "$75",
-      level: "Level 2",
     },
     {
+      siNumber: "EI003",
+      achievement: "Fast Start Bonus",
+      rewardAmount: "$500",
       date: "2023-05-20",
-      source: "Referral Bonus",
-      amount: "$50",
-      level: "Level 3",
     },
-    { date: "2023-05-15", source: "Team Bonus", amount: "$300", level: "N/A" },
     {
+      siNumber: "EI004",
+      achievement: "Rank Advancement",
+      rewardAmount: "$2,000",
+      date: "2023-05-15",
+    },
+    {
+      siNumber: "EI005",
+      achievement: "Global Pool Share",
+      rewardAmount: "$1,500",
       date: "2023-05-10",
-      source: "Leadership Bonus",
-      amount: "$500",
-      level: "N/A",
     },
   ];
 
-  // Sample Withdrawal data
+  // Updated Withdrawal data with new field structure
   const withdrawalData = [
     {
+      siNumber: "WD001",
       date: "2023-06-01",
       amount: "$1,500",
-      method: "Bank Transfer",
+      charges: "$45",
+      withdrawalMethod: "Bank Transfer",
+      merchant: "Chase Bank",
+      cryptoType: "N/A",
+      walletType: "N/A",
+      finalAmount: "$1,455",
       status: "Completed",
-      txid: "WD12345",
     },
     {
+      siNumber: "WD002",
       date: "2023-05-15",
       amount: "$2,000",
-      method: "Bitcoin",
+      charges: "$20",
+      withdrawalMethod: "Cryptocurrency",
+      merchant: "Binance",
+      cryptoType: "Bitcoin",
+      walletType: "BTC",
+      finalAmount: "$1,980",
       status: "Completed",
-      txid: "WD12346",
     },
     {
+      siNumber: "WD003",
       date: "2023-05-01",
       amount: "$1,000",
-      method: "Bank Transfer",
+      charges: "$30",
+      withdrawalMethod: "Bank Transfer",
+      merchant: "Wells Fargo",
+      cryptoType: "N/A",
+      walletType: "N/A",
+      finalAmount: "$970",
       status: "Completed",
-      txid: "WD12347",
     },
     {
+      siNumber: "WD004",
       date: "2023-04-15",
       amount: "$3,000",
-      method: "Ethereum",
+      charges: "$25",
+      withdrawalMethod: "Cryptocurrency",
+      merchant: "Coinbase",
+      cryptoType: "Ethereum",
+      walletType: "ETH",
+      finalAmount: "$2,975",
       status: "Completed",
-      txid: "WD12348",
     },
     {
+      siNumber: "WD005",
       date: "2023-04-01",
       amount: "$500",
-      method: "USDT",
+      charges: "$5",
+      withdrawalMethod: "Cryptocurrency",
+      merchant: "Binance",
+      cryptoType: "USDT",
+      walletType: "TRC20",
+      finalAmount: "$495",
       status: "Completed",
-      txid: "WD12349",
     },
   ];
 
@@ -327,25 +372,29 @@ const Report = () => {
             </div>
           </div>
 
+          {/* ROI Report - Updated with new columns */}
           {activeTab === "roi" && (
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                 <thead>
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Investment Plan
+                      ID
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Package
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                       Investment Amount
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Returns
+                      Date
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Expiry Date
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                       ROI
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                      Period
                     </th>
                   </tr>
                 </thead>
@@ -356,19 +405,22 @@ const Report = () => {
                       className="hover:bg-gray-600" // Updated hover class
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                        {item.plan}
+                        {item.id}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-                        {item.investment}
+                        {item.package}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
-                        {item.returns}
+                        {item.investmentAmount}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.date}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.expiryDate}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
                         {item.roi}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-                        {item.period}
                       </td>
                     </tr>
                   ))}
@@ -376,214 +428,246 @@ const Report = () => {
               </table>
             </div>
           )}
-          {/* BI Report */}
-           {/* BI Report */}
-{activeTab === "bi" && (
-  <div className="overflow-x-auto">
-    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-      <thead>
-        <tr>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Month
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Revenue
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Expenses
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Profit
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Growth
-          </th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-        {biData.map((item, index) => (
-          <tr
-            key={index}
-            className="hover:bg-gray-600 hover:text-white" // Updated hover class
-          >
-            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-              {item.month}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-              {item.revenue}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 dark:text-red-400">
-              {item.expenses}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
-              {item.profit}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm">
-              <span
-                className={
-                  item.growth.startsWith("+")
-                    ? "text-green-600 dark:text-green-400"
-                    : "text-red-600 dark:text-red-400"
-                }
-              >
-                {item.growth}
-              </span>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-)}
 
-{/* RI Report */}
-{activeTab === "ri" && (
-  <div className="overflow-x-auto">
-    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-      <thead>
-        <tr>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Date
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Source
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Amount
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Status
-          </th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-        {riData.map((item, index) => (
-          <tr
-            key={index}
-            className="hover:bg-gray-600 hover:text-white" // Updated hover class
-          >
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-              {item.date}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-              {item.source}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
-              {item.amount}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap">
-              <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
-                {item.status}
-              </span>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-)}
+          {/* BI Report - Updated with new columns */}
+          {activeTab === "bi" && (
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead>
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      SI Number
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Date
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Amount
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Percentage
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                  {biData.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                    >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                        {item.siNumber}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.date}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
+                        {item.amount}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.percentage}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                          {item.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
 
-{/* Extra Income Report */}
-{activeTab === "extra" && (
-  <div className="overflow-x-auto">
-    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-      <thead>
-        <tr>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Date
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Source
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Amount
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Level
-          </th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-        {extraIncomeData.map((item, index) => (
-          <tr
-            key={index}
-            className="hover:bg-gray-600 hover:text-white" // Updated hover class
-          >
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-              {item.date}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-              {item.source}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
-              {item.amount}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-              {item.level}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-)}
+          {/* RI Report - Updated with new columns */}
+          {activeTab === "ri" && (
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead>
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      SI Number
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Date
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Referral User
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Position
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Package
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Referral Amount
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                  {riData.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                    >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                        {item.siNumber}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.date}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.referralUser}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.position}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.package}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
+                        {item.referralAmount}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
 
-{/* Withdrawal Report */}
-{activeTab === "withdrawal" && (
-  <div className="overflow-x-auto">
-    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-      <thead>
-        <tr>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Date
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Amount
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Method
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Status
-          </th>
-          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-            Transaction ID
-          </th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-        {withdrawalData.map((item, index) => (
-          <tr
-            key={index}
-            className="hover:bg-gray-600 hover:text-white" // Updated hover class
-          >
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-              {item.date}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
-              {item.amount}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-              {item.method}
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap">
-              <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
-                {item.status}
-              </span>
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
-              {item.txid}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-)}
+          {/* Extra Income Report - Updated with new columns */}
+          {activeTab === "extra" && (
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead>
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      SI Number
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Achievement
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Reward Amount
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                  {extraIncomeData.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                    >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                        {item.siNumber}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.achievement}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
+                        {item.rewardAmount}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.date}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {/* Withdrawal Report - Updated with new columns */}
+          {activeTab === "withdrawal" && (
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead>
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      SI Number
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Date
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Amount
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Charges
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Withdrawal Method
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Merchant
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Crypto Type
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Wallet Type
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Final Amount
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                  {withdrawalData.map((item, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                    >
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                        {item.siNumber}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.date}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
+                        {item.amount}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 dark:text-red-400">
+                        {item.charges}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.withdrawalMethod}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.merchant}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.cryptoType}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
+                        {item.walletType}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 dark:text-green-400 font-medium">
+                        {item.finalAmount}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
+                          {item.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </div>
-
-  
     </div>
   );
 };
