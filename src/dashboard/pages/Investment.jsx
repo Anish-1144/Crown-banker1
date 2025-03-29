@@ -586,65 +586,59 @@ const Investment = () => {
         </div>
       )}
 
-    {/* Cryptocurrency Selection Popup */}
-{isCryptoPopupOpen && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 w-full max-w-7xl max-h-[90vh] flex flex-col">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-          Select Cryptocurrency
-        </h2>
-        <button
-          onClick={() => setIsCryptoPopupOpen(false)}
-          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
-        >
-          <X size={24} />
-        </button>
-      </div>
-      
-      <div className="overflow-y-auto flex-grow pr-2">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {cryptocurrencies.map((crypto, index) => (
-            <div
-              key={index}
-              onClick={() => handleCryptoSelect(crypto)}
-              className={`${crypto.color} rounded-xl p-4 cursor-pointer hover:opacity-90 transition-all`}
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-3">
-                  <img
-                    src={crypto.icon}
-                    alt={crypto.name}
-                    className="w-8 h-8"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold">{crypto.name}</h3>
-                  <p className="text-white text-opacity-80">
-                    {crypto.symbol}
-                  </p>
-                </div>
-              </div>
-              <div className="mt-4">
-                {/* <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Amount in USD"
-                    className="w-full p-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none"
-                  />
-                </div> */}
-                <button className="w-full rounded-3xl mt-2 py-2 bg-black bg-opacity-30 hover:bg-opacity-40 text-white  font-medium transition-colors">
-                  ADD FUND
-                </button>
+      {/* Cryptocurrency Selection Popup */}
+      {isCryptoPopupOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 w-full max-w-7xl max-h-[90vh] flex flex-col">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                Select Cryptocurrency
+              </h2>
+              <button
+                onClick={() => setIsCryptoPopupOpen(false)}
+                className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <div className="overflow-y-auto flex-grow pr-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                {cryptocurrencies.map((crypto, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handleCryptoSelect(crypto)}
+                    className={`${crypto.color} rounded-xl p-4 cursor-pointer hover:opacity-90 transition-all max-w-xs`}
+                  >
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center mr-2">
+                        <img
+                          src={crypto.icon}
+                          alt={crypto.name}
+                          className="w-10 h-10"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold text-sm">
+                          {crypto.name}
+                        </h3>
+                        <p className="text-white text-opacity-80 text-xs">
+                          {crypto.symbol}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-3">
+                      <button className="w-full rounded-3xl py-1.5 bg-black bg-opacity-30 hover:bg-opacity-40 text-white text-sm font-medium transition-colors">
+                        ADD FUND
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
-
+      )}
     </div>
   );
 };
