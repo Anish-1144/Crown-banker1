@@ -402,7 +402,7 @@ const Report = () => {
                   {roiData.map((item, index) => (
                     <tr
                       key={index}
-                      className="hover:bg-gray-600" // Updated hover class
+                      className="hover:bg-gray-200 dark:hover:bg-gray-600 " // Updated hover class
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                         {item.id}
@@ -456,7 +456,7 @@ const Report = () => {
                   {biData.map((item, index) => (
                     <tr
                       key={index}
-                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                      className="hover:bg-gray-200 dark:hover:bg-gray-600 " // Updated hover class
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                         {item.siNumber}
@@ -512,7 +512,7 @@ const Report = () => {
                   {riData.map((item, index) => (
                     <tr
                       key={index}
-                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                      className="hover:bg-gray-200 dark:hover:bg-gray-600 " // Updated hover class
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                         {item.siNumber}
@@ -563,7 +563,7 @@ const Report = () => {
                   {extraIncomeData.map((item, index) => (
                     <tr
                       key={index}
-                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                      className="hover:bg-gray-200 dark:hover:bg-gray-600 " // Updated hover class
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                         {item.siNumber}
@@ -626,7 +626,7 @@ const Report = () => {
                   {withdrawalData.map((item, index) => (
                     <tr
                       key={index}
-                      className="hover:bg-gray-600 hover:text-white" // Updated hover class
+                      className="hover:bg-gray-200 dark:hover:bg-gray-600 " // Updated hover class
                     >
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                         {item.siNumber}
