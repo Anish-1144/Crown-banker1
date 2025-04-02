@@ -18,6 +18,7 @@ import Privacy from "./pages/Privacy";
 import Term from "./pages/Term";
 import Fqa from "./pages/Fqa";
 import Smoothscrolls from "./components/Smoothscrolls";
+import Login from "./pages/Login";
 
 // Dashboard Imports
 import Layout from "./dashboard/components/Layout";
@@ -28,6 +29,7 @@ import Genealogy from "./dashboard/pages/Genealogy";
 import Report from "./dashboard/pages/Report";
 import Support from "./dashboard/pages/Support";
 import MyProfile from "./dashboard/pages/MyProfile";
+import Signup from "./pages/Signup";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -145,6 +147,22 @@ export default function App() {
         element={
           <Smoothscrolls>
             <NotFound />
+          </Smoothscrolls>
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <Smoothscrolls>
+            <Login />
+          </Smoothscrolls>
+        }
+      />
+      <Route
+        path="/signup"
+        element={
+          <Smoothscrolls>
+            <Signup />
           </Smoothscrolls>
         }
       />

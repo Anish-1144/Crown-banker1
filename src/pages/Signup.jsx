@@ -5,12 +5,118 @@ import Footer from "../components/footer/Footer";
 import RoundButton from "../components/ui/RoundButton";
 
 function Signup() {
+  const countries = [
+    { code: "AF", name: "Afghanistan" },
+    { code: "AL", name: "Albania" },
+    { code: "DZ", name: "Algeria" },
+    { code: "AD", name: "Andorra" },
+    { code: "AO", name: "Angola" },
+    { code: "AG", name: "Antigua and Barbuda" },
+    { code: "AR", name: "Argentina" },
+    { code: "AM", name: "Armenia" },
+    { code: "AU", name: "Australia" },
+    { code: "AT", name: "Austria" },
+    { code: "AZ", name: "Azerbaijan" },
+    { code: "BS", name: "Bahamas" },
+    { code: "BH", name: "Bahrain" },
+    { code: "BD", name: "Bangladesh" },
+    { code: "BB", name: "Barbados" },
+    { code: "BY", name: "Belarus" },
+    { code: "BE", name: "Belgium" },
+    { code: "BZ", name: "Belize" },
+    { code: "BJ", name: "Benin" },
+    { code: "BT", name: "Bhutan" },
+    { code: "BO", name: "Bolivia" },
+    { code: "BA", name: "Bosnia and Herzegovina" },
+    { code: "BW", name: "Botswana" },
+    { code: "BR", name: "Brazil" },
+    { code: "BN", name: "Brunei" },
+    { code: "BG", name: "Bulgaria" },
+    { code: "BF", name: "Burkina Faso" },
+    { code: "BI", name: "Burundi" },
+    { code: "CV", name: "Cabo Verde" },
+    { code: "KH", name: "Cambodia" },
+    { code: "CM", name: "Cameroon" },
+    { code: "CA", name: "Canada" },
+    { code: "CF", name: "Central African Republic" },
+    { code: "TD", name: "Chad" },
+    { code: "CL", name: "Chile" },
+    { code: "CN", name: "China" },
+    { code: "CO", name: "Colombia" },
+    { code: "KM", name: "Comoros" },
+    { code: "CG", name: "Congo" },
+    { code: "CD", name: "Congo (Democratic Republic)" },
+    { code: "CR", name: "Costa Rica" },
+    { code: "CI", name: "Côte d'Ivoire" },
+    { code: "HR", name: "Croatia" },
+    { code: "CU", name: "Cuba" },
+    { code: "CY", name: "Cyprus" },
+    { code: "CZ", name: "Czech Republic" },
+    { code: "DK", name: "Denmark" },
+    { code: "DJ", name: "Djibouti" },
+    { code: "DM", name: "Dominica" },
+    { code: "DO", name: "Dominican Republic" },
+    { code: "EC", name: "Ecuador" },
+    { code: "EG", name: "Egypt" },
+    { code: "SV", name: "El Salvador" },
+    { code: "GQ", name: "Equatorial Guinea" },
+    { code: "ER", name: "Eritrea" },
+    { code: "EE", name: "Estonia" },
+    { code: "SZ", name: "Eswatini" },
+    { code: "ET", name: "Ethiopia" },
+    { code: "FJ", name: "Fiji" },
+    { code: "FI", name: "Finland" },
+    { code: "FR", name: "France" },
+    { code: "GA", name: "Gabon" },
+    { code: "DE", name: "Germany" },
+    { code: "GH", name: "Ghana" },
+    { code: "GR", name: "Greece" },
+    { code: "IN", name: "India" },
+    { code: "ID", name: "Indonesia" },
+    { code: "IR", name: "Iran" },
+    { code: "IQ", name: "Iraq" },
+    { code: "IE", name: "Ireland" },
+    { code: "IT", name: "Italy" },
+    { code: "JP", name: "Japan" },
+    { code: "KE", name: "Kenya" },
+    { code: "KW", name: "Kuwait" },
+    { code: "LB", name: "Lebanon" },
+    { code: "MY", name: "Malaysia" },
+    { code: "MX", name: "Mexico" },
+    { code: "NL", name: "Netherlands" },
+    { code: "NZ", name: "New Zealand" },
+    { code: "NG", name: "Nigeria" },
+    { code: "PK", name: "Pakistan" },
+    { code: "PH", name: "Philippines" },
+    { code: "PL", name: "Poland" },
+    { code: "PT", name: "Portugal" },
+    { code: "QA", name: "Qatar" },
+    { code: "RU", name: "Russia" },
+    { code: "SA", name: "Saudi Arabia" },
+    { code: "SG", name: "Singapore" },
+    { code: "ZA", name: "South Africa" },
+    { code: "ES", name: "Spain" },
+    { code: "LK", name: "Sri Lanka" },
+    { code: "SE", name: "Sweden" },
+    { code: "CH", name: "Switzerland" },
+    { code: "TH", name: "Thailand" },
+    { code: "TR", name: "Turkey" },
+    { code: "AE", name: "United Arab Emirates" },
+    { code: "GB", name: "United Kingdom" },
+    { code: "US", name: "United States" },
+  ];
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    confirmEmail: "",
     password: "",
     confirmPassword: "",
+    hasSponsor: "",
+    sponsorName: "",
+    phone: "",
+    country: "",
+    position: "",
   });
 
   const handleChange = (e) => {
@@ -23,163 +129,222 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle signup logic here
     console.log("Signup attempt with:", formData);
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Nevbar />
+    <div className="h-[30rem] w-screen flex flex-col ">
+      {/* <Nevbar /> */}
 
-      <div className="flex-grow flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-lg">
-          <div>
+      <div className="flex-grow flex bg-gray-900 ">
+        {/* Left Column - Form */}
+        <div className="w-full items-center justify-center md:w-1/2 flex flex-col md:mx-24">
+          <div className="mt-1">
             <img
-              className="mx-auto h-16 w-auto"
+              className="h-24 w-auto"
               src="/images/logo1.png"
               alt="Crown Bankers Logo"
             />
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              Create a new account
-            </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
-              Or{" "}
-              <Link
-                to="/login"
-                className="font-medium text-[#4CAF50] hover:text-[#3d9140]"
-              >
-                sign in to your existing account
-              </Link>
-            </p>
           </div>
-
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            <div className="rounded-md shadow-sm space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="sr-only">
-                    First Name
-                  </label>
-                  <input
-                    id="firstName"
-                    name="firstName"
-                    type="text"
-                    required
-                    className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] focus:z-10 sm:text-md"
-                    placeholder="First Name"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="sr-only">
-                    Last Name
-                  </label>
-                  <input
-                    id="lastName"
-                    name="lastName"
-                    type="text"
-                    required
-                    className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] focus:z-10 sm:text-md"
-                    placeholder="Last Name"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="email" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] focus:z-10 sm:text-md"
-                  placeholder="Email address"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="new-password"
-                  required
-                  className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] focus:z-10 sm:text-md"
-                  placeholder="Password"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="confirmPassword" className="sr-only">
-                  Confirm Password
-                </label>
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  autoComplete="new-password"
-                  required
-                  className="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] focus:z-10 sm:text-md"
-                  placeholder="Confirm Password"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-
-            <div className="flex items-center">
-              <input
-                id="terms"
-                name="terms"
-                type="checkbox"
-                required
-                className="h-4 w-4 text-[#4CAF50] focus:ring-[#4CAF50] border-gray-300 rounded"
-              />
-              <label
-                htmlFor="terms"
-                className="ml-2 block text-sm text-gray-900"
-              >
-                I agree to the{" "}
-                <Link
-                  to="/terms"
-                  className="text-[#4CAF50] hover:text-[#3d9140]"
+          <div className="">
+            <div className=" flex items-center justify-start overflow-y-auto mt-2">
+              <div className="w-full max-w-lg px-6">
+                <form
+                  className=" space-y-1 border border-green-400 px-4 py-2 rounded-md"
+                  onSubmit={handleSubmit}
                 >
-                  Terms of Service
-                </Link>{" "}
-                and{" "}
-                <Link
-                  to="/privacy"
-                  className="text-[#4CAF50] hover:text-[#3d9140]"
-                >
-                  Privacy Policy
-                </Link>
-              </label>
-            </div>
+                  {" "}
+                  <h2 className="text-4xl font-bold text-white ">
+                    Create a new account
+                  </h2>
+                  {/* <h3 className="text-white">join and grow with us</h3> */}
+                  <div className="mt-2 rounded-md shadow-sm space-y-2 ">
+                    <div className="grid grid-cols-2 gap-3">
+                      <input
+                        name="firstName"
+                        type="text"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        placeholder="First Name"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                      />
+                      <input
+                        name="lastName"
+                        type="text"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        placeholder="Last Name"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                      />
+                    </div>
 
-            <div>
-              <RoundButton
-                text="Create Account"
-                type="submit"
-                className="w-full"
-              />
+                    <div className="grid grid-cols-2 gap-3">
+                      <select
+                        name="hasSponsor"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 text-gray-400 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        value={formData.hasSponsor}
+                        onChange={handleChange}
+                      >
+                        <option value="">Sponsor?</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+
+                      <select
+                        name="position"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 text-gray-400 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        value={formData.position}
+                        onChange={handleChange}
+                      >
+                        <option value="">Position</option>
+                        <option value="right">Right</option>
+                        <option value="left">Left</option>
+                      </select>
+                    </div>
+
+                    {formData.hasSponsor === "yes" && (
+                      <input
+                        name="sponsorName"
+                        type="text"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        placeholder="Sponsor Name"
+                        value={formData.sponsorName}
+                        onChange={handleChange}
+                      />
+                    )}
+
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                      placeholder="Email address"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+
+                    <input
+                      name="confirmEmail"
+                      type="email"
+                      required
+                      className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                      placeholder="Confirm Email"
+                      value={formData.confirmEmail}
+                      onChange={handleChange}
+                    />
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <input
+                        name="phone"
+                        type="tel"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        placeholder="Phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                      />
+
+                      <select
+                        name="country"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 text-gray-400 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        value={formData.country}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select Country</option>
+                        {countries.map((country) => (
+                          <option key={country.code} value={country.code}>
+                            {country.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <input
+                        name="password"
+                        type="password"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                      />
+                      <input
+                        name="confirmPassword"
+                        type="password"
+                        required
+                        className="appearance-none bg-gray-800 block w-full px-3 py-3 border border-gray-500 placeholder-gray-500 text-gray-100 focus:outline-none focus:ring-[#4CAF50] focus:border-[#4CAF50] sm:text-sm"
+                        placeholder="Confirm"
+                        value={formData.confirmPassword}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <input
+                      id="terms"
+                      name="terms"
+                      type="checkbox"
+                      required
+                      className="h-4 w-4 text-[#4CAF50] focus:ring-[#4CAF50] border-gray-300 rounded"
+                    />
+                    <label htmlFor="terms" className="ml-2 text-xs text-white">
+                      I agree to{" "}
+                      <Link
+                        to="/terms"
+                        className="text-[#4CAF50] hover:text-[#3d9140]"
+                      >
+                        Terms
+                      </Link>{" "}
+                      &{" "}
+                      <Link
+                        to="/privacy"
+                        className="text-[#4CAF50] hover:text-[#3d9140]"
+                      >
+                        Privacy
+                      </Link>
+                    </label>
+                  </div>
+                  <RoundButton
+                    text="Create Account "
+                    type="submit"
+                    className="w-full py-3 text-sm "
+                  />
+                  <p className="text-xs text-gray-300">
+                    Have an account?{" "}
+                    <Link
+                      to="/login"
+                      className="font-medium text-[#4CAF50] hover:text-[#3d9140]"
+                    >
+                      Log in
+                    </Link>
+                  </p>
+                </form>
+              </div>
             </div>
-          </form>
+          </div>
+        </div>
+
+        {/* Right Column - Image */}
+        <div className="hidden md:flex md:w-1/2 bg-white">
+          <div className="w-full h-full flex items-center justify-center">
+            <img
+              src="https://imgs.search.brave.com/G9Kif04I3Rr-UuTWYeQ9QIE4HJIbqvIDff65uEDdz5I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZnJlZWltYWdl/cy5jb20vaW1hZ2Vz/L2xhcmdlLXByZXZp/ZXdzL2YwOS9zb2xh/ci1wb3dlcmVkLWZh/Y3RvcnktaWxsdXN0/cmF0aW9uLTA0MTAt/NTcwMDI0MS5qcGc_/Zm10"
+              alt="Secure Banking"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
-
 export default Signup;
